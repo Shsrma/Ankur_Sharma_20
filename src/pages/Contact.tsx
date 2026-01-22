@@ -47,6 +47,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,7 +63,7 @@ const Contact = () => {
       description: "Thank you for reaching out. I'll get back to you soon.",
     });
 
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', message: '' });
     setIsSubmitting(false);
   };
 
@@ -127,6 +128,22 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none"
                     placeholder="john@example.com"
+                    whileFocus={{ scale: 1.01 }}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                    Phone Number
+                  </label>
+                  <motion.input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none"
+                    placeholder="+91 9876543210"
                     whileFocus={{ scale: 1.01 }}
                   />
                 </div>
