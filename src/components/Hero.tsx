@@ -145,7 +145,7 @@ const Hero = () => {
             transition={{ delay: 0.7, duration: 0.6 }}
           >
             <motion.a
-              href="/Ankur_Sharma_Resume.pdf"
+              href="/Ankur_Sharma-Resume.pdf"
               download
               className="magnetic-button text-primary-foreground gap-2"
               whileHover={{ scale: 1.05 }}

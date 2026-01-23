@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
@@ -107,6 +107,16 @@ const Navbar = () => {
 
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center gap-4">
+            <motion.a
+              href="/Ankur_Sharma-Resume.pdf"
+              download
+              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-sm font-medium hover:bg-muted/50 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download className="w-4 h-4" />
+              Resume
+            </motion.a>
             <ThemeToggle />
             
             <motion.button
@@ -157,6 +167,20 @@ const Navbar = () => {
                     </Link>
                   </motion.div>
                 ))}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navItems.length * 0.1 }}
+                >
+                  <a
+                    href="/Ankur_Sharma-Resume.pdf"
+                    download
+                    className="flex items-center gap-2 px-4 py-3 rounded-xl text-muted-foreground hover:bg-muted/50 transition-all duration-300"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Resume
+                  </a>
+                </motion.div>
               </div>
             </div>
           </motion.div>
