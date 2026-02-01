@@ -18,4 +18,23 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "dist",
+    sourcemap: mode === "development",
+    minify: "esbuild",
+    target: "esnext",
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          ui: ["framer-motion", "sonner"],
+        },
+      },
+    },
+  },
+  define: {
+    "process.env.VITE_API_URL": JSON.stringify(process.env.VITE_API_URL),
+    "process.env.VITE_APP_ENV": JSON.stringify(process.env.VITE_APP_ENV || "development"),
+  },
 }));

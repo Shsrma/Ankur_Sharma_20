@@ -19,6 +19,18 @@ interface ContactFormData {
   message: string;
 }
 
+interface Project {
+  _id: string;
+  title: string;
+  description: string;
+  highlights: string[];
+  technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  imageUrl?: string;
+  featured?: boolean;
+}
+
 /**
  * Generic API request handler
  */
@@ -71,13 +83,13 @@ export const projectAPI = {
   /**
    * Get all projects
    */
-  getAll: () => apiRequest<any[]>('/projects'),
+  getAll: () => apiRequest<Project[]>('/projects'),
 
   /**
    * Get featured projects only
    */
   getFeatured: () =>
-    apiRequest<any[]>('/projects', {
+    apiRequest<Project[]>('/projects', {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -90,5 +102,5 @@ export const projectAPI = {
   /**
    * Get project by ID
    */
-  getById: (id: string) => apiRequest<any>(`/projects/${id}`),
+  getById: (id: string) => apiRequest<Project>(`/projects/${id}`),
 };

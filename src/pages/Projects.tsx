@@ -129,9 +129,8 @@ const Projects = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.15 + i * 0.1 }}
                       >
-                        <div 
-                          className="w-1.5 h-1.5 rounded-full mt-2 shrink-0"
-                          style={{ background: 'var(--gradient-primary)' }}
+                        <span 
+                          className="w-1.5 h-1.5 rounded-full mt-2 shrink-0 block bg-gradient-to-r from-cyan-400 to-blue-500"
                         />
                         {highlight}
                       </motion.li>

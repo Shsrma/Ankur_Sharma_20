@@ -1,0 +1,51 @@
+# Vercel Ignore File
+# Files that should not be deployed to Vercel
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*.sublime-*
+.DS_Store
+
+# Build artifacts
+dist
+build
+out
+.next
+.nuxt
+
+# Testing
+coverage
+.nyc_output
+*.lcov
+
+# Documentation
+docs
+CONTRIBUTING.md
+DEPLOYMENT.md
+INTERVIEW_GUIDE.md
+IMPROVEMENTS.md
+SUMMARY.md
+CHECKLIST.md
+
+# Project specific
+README_backup.md
+*.bak
