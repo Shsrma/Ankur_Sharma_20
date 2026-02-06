@@ -53,7 +53,7 @@ const Contact = () => {
         toast.success('Message sent successfully!', {
           description: "Thank you for reaching out. I'll get back to you soon.",
         });
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '', recipient: 'gmail' });
       } else if (response.errors && response.errors.length > 0) {
         setFormErrors(response.errors);
         toast.error('Please fix the errors below');
