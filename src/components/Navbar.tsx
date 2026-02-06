@@ -36,11 +36,10 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'py-3 backdrop-blur-xl bg-background/70 border-b border-border/50 shadow-lg'
-            : 'py-5 bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+          ? 'py-3 backdrop-blur-xl bg-background/70 border-b border-border/50 shadow-lg'
+          : 'py-5 bg-transparent'
+          }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
@@ -86,9 +85,8 @@ const Navbar = () => {
             {navItems.map((item) => (
               <Link key={item.path} to={item.path}>
                 <motion.div
-                  className={`nav-link ${
-                    location.pathname === item.path ? 'text-primary' : 'text-muted-foreground'
-                  }`}
+                  className={`nav-link ${location.pathname === item.path ? 'text-primary' : 'text-muted-foreground'
+                    }`}
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                 >
@@ -108,8 +106,8 @@ const Navbar = () => {
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <motion.a
-              href="/Ankur_Sharma-Resume.pdf"
-              download
+              href="/Ankur_Sharma-ResumeD.pdf"
+              download="AnkurSharma-ResumeD.pdf"
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-sm font-medium hover:bg-muted/50 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -118,7 +116,7 @@ const Navbar = () => {
               Resume
             </motion.a>
             <ThemeToggle />
-            
+
             <motion.button
               className="md:hidden p-2 rounded-lg glass-card"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -156,11 +154,10 @@ const Navbar = () => {
                   >
                     <Link to={item.path}>
                       <div
-                        className={`px-4 py-3 rounded-xl transition-all duration-300 ${
-                          location.pathname === item.path
-                            ? 'bg-primary/10 text-primary'
-                            : 'text-muted-foreground hover:bg-muted/50'
-                        }`}
+                        className={`px-4 py-3 rounded-xl transition-all duration-300 ${location.pathname === item.path
+                          ? 'bg-primary/10 text-primary'
+                          : 'text-muted-foreground hover:bg-muted/50'
+                          }`}
                       >
                         {item.name}
                       </div>
@@ -173,7 +170,7 @@ const Navbar = () => {
                   transition={{ delay: navItems.length * 0.1 }}
                 >
                   <a
-                    href="/Ankur_Sharma-Resume.pdf"
+                    href="/Ankur_Sharma-ResumeD.pdf"
                     download
                     className="flex items-center gap-2 px-4 py-3 rounded-xl text-muted-foreground hover:bg-muted/50 transition-all duration-300"
                   >

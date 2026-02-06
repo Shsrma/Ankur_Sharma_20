@@ -46,7 +46,7 @@ const Hero = () => {
                 ease: 'easeInOut',
               }}
             />
-            
+
             {/* Rotating border */}
             <motion.div
               className="absolute -inset-2 rounded-full"
@@ -75,7 +75,7 @@ const Hero = () => {
                 animate={{ opacity: imageLoaded ? 1 : 0 }}
                 transition={{ duration: 0.5 }}
               />
-              
+
               {/* Shimmer overlay */}
               <motion.div
                 className="absolute inset-0 opacity-30"
@@ -132,7 +132,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            B.Tech Computer Science student passionate about building innovative 
+            B.Tech Computer Science student passionate about building innovative
             solutions with modern technologies. Experienced in full-stack development,
             machine learning, and creating impactful real-world applications.
           </motion.p>
@@ -146,7 +146,7 @@ const Hero = () => {
           >
             <motion.a
               href="/Ankur_Sharma-ResumeD.pdf"
-              download
+              download="AnkurSharma-Resume.pdf"
               className="magnetic-button text-primary-foreground gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
