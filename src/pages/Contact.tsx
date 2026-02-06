@@ -62,7 +62,9 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      toast.error('An error occurred while sending your message. Please try again.');
+      // Show the actual error message if available, otherwise generic
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(`Send failed: ${errorMessage}. Check console for details.`);
     } finally {
       setIsSubmitting(false);
     }
