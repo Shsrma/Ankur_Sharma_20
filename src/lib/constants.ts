@@ -60,15 +60,15 @@ export const CONTACT_INFO = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'ankur.sharma2003920@gmail.com',
-    href: 'mailto:ankur.sharma2003920@gmail.com',
+    value: 'ankurbpradhan@gmail.com',
+    href: 'mailto:ankurbpradhan@gmail.com',
     color: 'hsl(0, 100%, 65%)',
   },
   {
     icon: Mail,
     label: 'Alternate Email',
-    value: 'ankur.sharma2003920@outlook.com',
-    href: 'mailto:ankur.sharma2003920@outlook.com',
+    value: 'ankurbpradhan@outlook.com',
+    href: 'mailto:ankurbpradhan@outlook.com',
     color: 'hsl(210, 100%, 50%)',
   },
   {

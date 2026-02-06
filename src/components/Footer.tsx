@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="relative mt-20 border-t border-border/50">
       {/* Gradient glow */}
-      <div 
+      <div
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse at center top, hsl(var(--glow-cyan) / 0.15) 0%, transparent 70%)',
@@ -25,7 +25,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div 
+              <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold"
                 style={{ background: 'var(--gradient-primary)' }}
               >
@@ -34,7 +34,7 @@ const Footer = () => {
               <span className="font-display font-semibold text-lg neon-text">ANKUR SHARMA</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Software Engineer & Web Developer passionate about building innovative solutions 
+              Software Engineer & Web Developer passionate about building innovative solutions
               with modern technologies.
             </p>
           </motion.div>
@@ -78,7 +78,7 @@ const Footer = () => {
               {[
                 { icon: Linkedin, url: 'https://www.linkedin.com/in/ankur-s-52686427b', color: 'hsl(210, 100%, 50%)' },
                 { icon: Github, url: 'https://github.com/Shsrma', color: 'hsl(0, 0%, 70%)' },
-                { icon: Mail, url: 'mailto:ankur.sharma2003920@gmail.com', color: 'hsl(0, 100%, 65%)' },
+                { icon: Mail, url: 'mailto:ankurbpradhan@gmail.com', color: 'hsl(0, 100%, 65%)' },
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -87,7 +87,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300"
                   style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)' }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.1,
                     boxShadow: `0 0 20px ${social.color}60`,
                   }}

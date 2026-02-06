@@ -29,7 +29,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:ankur.sharma2003920@outlook.com',
+    url: 'mailto:ankurbpradhan@outlook.com',
     icon: <Mail className="w-5 h-5" />,
     color: 'hsl(200, 100%, 50%)',
   },
