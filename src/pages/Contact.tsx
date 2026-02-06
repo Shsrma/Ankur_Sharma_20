@@ -10,7 +10,7 @@ interface FormData {
   email: string;
   phone: string;
   message: string;
-  recipient: 'gmail' | 'outlook';
+  recipient: 'gmail' | 'outlook' | 'both';
 }
 
 interface FormError {
@@ -24,7 +24,7 @@ const Contact = () => {
     email: '',
     phone: '',
     message: '',
-    recipient: 'gmail', // Default to Gmail
+    recipient: 'both', // Default to Both
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formErrors, setFormErrors] = useState<FormError[]>([]);
@@ -329,8 +329,9 @@ const Contact = () => {
                       onChange={handleChange as any}
                       className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none appearance-none cursor-pointer"
                     >
-                      <option value="gmail">General Inquiry (ankurbpradhan@gmail.com)</option>
-                      <option value="outlook">Project/Business (ankurbpradhan@outlook.com)</option>
+                      <option value="both">General / Not Sure (Send to Both)</option>
+                      <option value="gmail">General Inquiry (Gmail Only)</option>
+                      <option value="outlook">Project/Business (Outlook Only)</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

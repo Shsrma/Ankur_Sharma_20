@@ -179,9 +179,15 @@ async function sendAdminNotificationEmail(contact, recipientType) {
   });
 
   // Determine admin email based on user selection
-  const adminEmail = recipientType === 'outlook'
-    ? "ankurbpradhan@outlook.com"
-    : "ankurbpradhan@gmail.com";
+  let adminEmail;
+  if (recipientType === 'outlook') {
+    adminEmail = "ankurbpradhan@outlook.com";
+  } else if (recipientType === 'gmail') {
+    adminEmail = "ankurbpradhan@gmail.com";
+  } else {
+    // Default or 'both' -> Send to both
+    adminEmail = "ankurbpradhan@gmail.com, ankurbpradhan@outlook.com";
+  }
 
   const mailOptions = {
     from: `"Portfolio Contact" <${process.env.SMTP_USER}>`,
