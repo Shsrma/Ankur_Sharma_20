@@ -107,7 +107,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <motion.a
               href="/Ankur_Sharma-ResumeD.pdf"
-              download="AnkurSharma-ResumeD.pdf"
+              download="AnkurSharma-Resume.pdf"
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-sm font-medium hover:bg-muted/50 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
