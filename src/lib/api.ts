@@ -17,7 +17,7 @@ interface ContactFormData {
   email: string;
   phone?: string;
   message: string;
-  recipient?: 'gmail' | 'outlook';
+  recipient?: 'gmail' | 'outlook' | 'both';
 }
 
 interface Project {

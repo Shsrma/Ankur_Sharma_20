@@ -18,6 +18,70 @@ interface FormError {
   message: string;
 }
 
+const CollapsibleSection = ({ title, children }: { title: string; children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border border-border/50 rounded-xl bg-muted/30 overflow-hidden transition-all duration-300">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-4 text-left font-semibold text-primary/90 hover:bg-muted/50 transition-colors"
+      >
+        <span className="text-lg flex items-center gap-2">{title}</span>
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <svg className="w-5 h-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </motion.span>
+      </button>
+      <motion.div
+        initial={false}
+        animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className="overflow-hidden"
+      >
+        <div className="p-4 pt-0 border-t border-border/50">
+          {children}
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+const CollapsibleMessage = ({ children }: { children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="bg-background/50 rounded-lg border border-border/50 overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center gap-2 p-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider hover:text-primary transition-colors"
+      >
+        <span>💬 Suggested message</span>
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </motion.span>
+      </button>
+      <motion.div
+        initial={false}
+        animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.2 }}
+        className="overflow-hidden"
+      >
+        <p className="p-3 pt-0 text-sm italic text-muted-foreground/80">{children}</p>
+      </motion.div>
+    </div>
+  );
+};
+
 const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
