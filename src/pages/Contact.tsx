@@ -90,7 +90,6 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info (Now First/Left) */}
-          {/* Contact Info (Now First/Left) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -98,7 +97,7 @@ const Contact = () => {
             className="space-y-8"
           >
             <div className="glass-card p-8">
-              <h2 className="text-2xl font-display font-bold mb-6 neon-text">Quick Connect Guide</h2>
+              <h2 className="text-2xl font-display font-bold mb-6 neon-text">Connect With Me</h2>
               <div className="space-y-8">
 
                 {/* Hiring / Recruiting */}
@@ -107,13 +106,19 @@ const Contact = () => {
                     <span className="text-xl">👔</span> If You’re Hiring / Recruiting
                   </h3>
                   <div className="bg-muted/30 rounded-xl p-4 border border-border/50">
-                    <p className="text-sm text-muted-foreground mb-3">
-                      <strong className="text-foreground">LinkedIn:</strong> Best to review my professional background and discuss opportunities.<br />
-                      <strong className="text-foreground">Email:</strong> For formal hiring discussions and details.
-                    </p>
+                    <p className="text-sm text-foreground mb-1 font-medium">Best platforms: LinkedIn · Email</p>
+                    <div className="text-sm text-muted-foreground mb-3 space-y-2">
+                      <p><strong className="text-foreground">LinkedIn:</strong> If you’re a recruiter or hiring manager, LinkedIn is the best place to review my professional background and discuss full-time, internship, or contract opportunities.</p>
+                      <p><strong className="text-foreground">Email:</strong> For formal hiring discussions, role details, or interview coordination, email is the most reliable way to reach me.</p>
+                    </div>
                     <div className="flex gap-3 flex-wrap">
                       <a href="https://www.linkedin.com/in/ankur-s-52686427b" target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 rounded-full bg-blue-600/10 text-blue-600 border border-blue-600/20 hover:bg-blue-600/20 transition-colors">LinkedIn Profile</a>
-                      <a href="mailto:ankurbpradhan@gmail.com" className="text-xs px-3 py-1.5 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-colors">Email</a>
+                      <a
+                        href="mailto:ankurbpradhan@gmail.com?subject=Hiring%20Opportunity&body=Hello%20Ankur,%20I%20came%20across%20your%20portfolio%20and%20I%E2%80%99m%20reaching%20out%20regarding%20a%20potential%20full-time,%20internship,%20or%20contract%20opportunity.%20I%E2%80%99d%20like%20to%20discuss%20your%20experience%20and%20explore%20whether%20there%E2%80%99s%20a%20fit."
+                        className="text-xs px-3 py-1.5 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-colors"
+                      >
+                        Email (Recruiting)
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -121,18 +126,24 @@ const Contact = () => {
                 {/* Collaboration */}
                 <div className="space-y-3">
                   <h3 className="text-lg font-semibold text-primary/90 flex items-center gap-2">
-                    <span className="text-xl">🤝</span> If You Want to Collaborate
+                    <span className="text-xl">🤝</span> If You Want to Collaborate on a Project
                   </h3>
                   <div className="bg-muted/30 rounded-xl p-4 border border-border/50">
-                    <p className="text-sm text-muted-foreground mb-3">
-                      <strong className="text-foreground">GitHub:</strong> Review my code quality and approach.<br />
-                      <strong className="text-foreground">Discord:</strong> For ongoing collaboration & technical discussions.<br />
-                      <strong className="text-foreground">Email:</strong> For proposals and planning.
-                    </p>
+                    <p className="text-sm text-foreground mb-1 font-medium">Best platforms: GitHub · Discord · Email</p>
+                    <div className="text-sm text-muted-foreground mb-3 space-y-2">
+                      <p><strong className="text-foreground">GitHub:</strong> If you’re interested in collaborating, contributing, or reviewing my work, GitHub reflects my approach to code quality, structure, and real-world problem-solving.</p>
+                      <p><strong className="text-foreground">Discord:</strong> Discord works well for ongoing collaboration, technical discussions, and team-based project communication.</p>
+                      <p><strong className="text-foreground">Email:</strong> For collaboration proposals or project planning, feel free to reach out via email with relevant details.</p>
+                    </div>
                     <div className="flex gap-3 flex-wrap">
                       <a href="https://github.com/Shsrma" target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 rounded-full bg-gray-600/10 text-gray-600 border border-gray-600/20 hover:bg-gray-600/20 transition-colors">GitHub</a>
                       <span className="text-xs px-3 py-1.5 rounded-full bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 select-all cursor-copy" title="Click to select">Discord: ankursharma_04180</span>
-                      <a href="mailto:ankurbpradhan@outlook.com" className="text-xs px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-500 border border-blue-500/20 hover:bg-blue-500/20 transition-colors">Alt Email</a>
+                      <a
+                        href="mailto:ankurbpradhan@gmail.com?subject=Collaboration%20Proposal&body=Hi%20Ankur,%20I%20reviewed%20your%20work%20and%20I%E2%80%99m%20interested%20in%20collaborating%20on%20a%20technical%20project.%20I%E2%80%99d%20like%20to%20discuss%20ideas,%20scope,%20and%20how%20we%20could%20work%20together%20effectively."
+                        className="text-xs px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-500 border border-blue-500/20 hover:bg-blue-500/20 transition-colors"
+                      >
+                        Email (Proposals)
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -143,13 +154,48 @@ const Contact = () => {
                     <span className="text-xl">💼</span> If You’re Looking for a Freelancer
                   </h3>
                   <div className="bg-muted/30 rounded-xl p-4 border border-border/50">
+                    <p className="text-sm text-foreground mb-1 font-medium">Best platforms: Email · WhatsApp</p>
+                    <div className="text-sm text-muted-foreground mb-3 space-y-2">
+                      <p><strong className="text-foreground">Email:</strong> If you’re looking for a developer for freelance or short-term work, email is ideal for sharing project requirements, timelines, and scope.</p>
+                      <p><strong className="text-foreground">WhatsApp:</strong> For quick clarifications or time-sensitive freelance discussions, WhatsApp is a convenient option.</p>
+                    </div>
+                    <div className="flex gap-3 flex-wrap">
+                      <a
+                        href="mailto:ankurbpradhan@gmail.com?subject=Freelance%20Project&body=Hello%20Ankur,%20I%E2%80%99m%20looking%20for%20a%20developer%20to%20help%20with%20a%20freelance%20or%20short-term%20project.%20I%E2%80%99d%20like%20to%20share%20the%20project%20requirements,%20timeline,%20and%20expectations."
+                        className="text-xs px-3 py-1.5 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-colors"
+                      >
+                        Email
+                      </a>
+                      <a
+                        href="https://wa.me/919414407192?text=Hello%20Ankur,%20I%E2%80%99m%20looking%20for%20a%20developer%20to%20help%20with%20a%20freelance%20or%20short-term%20project.%20I%E2%80%99d%20like%20to%20share%20the%20project%20requirements,%20timeline,%20and%20expectations."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs px-3 py-1.5 rounded-full bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500/20 transition-colors"
+                      >
+                        WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Networking */}
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold text-primary/90 flex items-center gap-2">
+                    <span className="text-xl">🌐</span> If You’re Networking or Exploring Opportunities
+                  </h3>
+                  <div className="bg-muted/30 rounded-xl p-4 border border-border/50">
+                    <p className="text-sm text-foreground mb-1 font-medium">Best platform: LinkedIn</p>
                     <p className="text-sm text-muted-foreground mb-3">
-                      <strong className="text-foreground">Email:</strong> Share requirements and scope.<br />
-                      <strong className="text-foreground">WhatsApp:</strong> For quick clarifications.
+                      <strong className="text-foreground">LinkedIn:</strong> If you’re interested in professional networking, career discussions, or long-term opportunities, LinkedIn is the best place to connect.
                     </p>
                     <div className="flex gap-3 flex-wrap">
-                      <a href="mailto:ankurbpradhan@gmail.com" className="text-xs px-3 py-1.5 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-colors">Email</a>
-                      <a href="https://wa.me/919414407192" target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 rounded-full bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500/20 transition-colors">WhatsApp</a>
+                      <a href="https://www.linkedin.com/in/ankur-s-52686427b" target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 rounded-full bg-blue-600/10 text-blue-600 border border-blue-600/20 hover:bg-blue-600/20 transition-colors">LinkedIn Profile</a>
+                      <a
+                        href="mailto:ankurbpradhan@gmail.com?subject=Networking%20&body=Hi%20Ankur,%20I%E2%80%99m%20reaching%20out%20to%20connect%20professionally%20and%20explore%20potential%20opportunities,%20career%20discussions,%20or%20long-term%20networking."
+                        className="text-xs px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-500 border border-blue-500/20 hover:bg-blue-500/20 transition-colors"
+                      >
+                        Email (Connection)
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -157,14 +203,43 @@ const Contact = () => {
                 {/* Data / ML */}
                 <div className="space-y-3">
                   <h3 className="text-lg font-semibold text-primary/90 flex items-center gap-2">
-                    <span className="text-xl">📊</span> If You’re From Data / ML Background
+                    <span className="text-xl">📊</span> If You’re From a Data / ML Background
                   </h3>
                   <div className="bg-muted/30 rounded-xl p-4 border border-border/50">
+                    <p className="text-sm text-foreground mb-1 font-medium">Best platform: Kaggle</p>
                     <p className="text-sm text-muted-foreground mb-3">
-                      <strong className="text-foreground">Kaggle:</strong> Showcases my work with datasets and models.
+                      <strong className="text-foreground">Kaggle:</strong> If you’re interested in data science or machine learning, Kaggle showcases my work with datasets, models, experiments, and analytical problem-solving.
                     </p>
                     <div className="flex gap-3 flex-wrap">
                       <a href="https://www.kaggle.com/ankur20sharma" target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 rounded-full bg-cyan-500/10 text-cyan-500 border border-cyan-500/20 hover:bg-cyan-500/20 transition-colors">Kaggle Profile</a>
+                      <a
+                        href="mailto:ankurbpradhan@gmail.com?subject=Data%20Science%20Discussion&body=Hello%20Ankur,%20I%20reviewed%20your%20Kaggle%20work%20and%20would%20like%20to%20connect%20regarding%20data%20science%20or%20machine%20learning%20topics,%20projects,%20or%20discussions."
+                        className="text-xs px-3 py-1.5 rounded-full bg-cyan-500/10 text-cyan-500 border border-cyan-500/20 hover:bg-cyan-500/20 transition-colors"
+                      >
+                        Email (Discussion)
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Skills Review */}
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold text-primary/90 flex items-center gap-2">
+                    <span className="text-xl">🧠</span> If You’re Reviewing My Skills Before Reaching Out
+                  </h3>
+                  <div className="bg-muted/30 rounded-xl p-4 border border-border/50">
+                    <p className="text-sm text-foreground mb-1 font-medium">Best platform: GitHub</p>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      <strong className="text-foreground">GitHub:</strong> If you’d like to assess my technical skills before connecting, GitHub provides insight into my coding standards, project architecture, and implementation style.
+                    </p>
+                    <div className="flex gap-3 flex-wrap">
+                      <a href="https://github.com/Shsrma" target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 rounded-full bg-gray-600/10 text-gray-600 border border-gray-600/20 hover:bg-gray-600/20 transition-colors">GitHub Profile</a>
+                      <a
+                        href="mailto:ankurbpradhan@gmail.com?subject=Technical%20Skills%20Discussion&body=Hi%20Ankur,%20I%E2%80%99ve%20been%20reviewing%20your%20projects%20and%20would%20like%20to%20connect%20to%20discuss%20your%20technical%20skills,%20approach,%20and%20experience%20in%20more%20detail."
+                        className="text-xs px-3 py-1.5 rounded-full bg-gray-600/10 text-gray-600 border border-gray-600/20 hover:bg-gray-600/20 transition-colors"
+                      >
+                        Email (Discussion)
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -175,13 +250,20 @@ const Contact = () => {
                     <span className="text-xl">👋</span> If You’re Looking to Connect Casually
                   </h3>
                   <div className="bg-muted/30 rounded-xl p-4 border border-border/50">
-                    <p className="text-sm text-muted-foreground mb-3">
-                      <strong className="text-foreground">Instagram:</strong> Projects and personal milestones.<br />
-                      <strong className="text-foreground">Snapchat:</strong> Informal conversations.
-                    </p>
+                    <p className="text-sm text-foreground mb-1 font-medium">Best platforms: Instagram · Snapchat</p>
+                    <div className="text-sm text-muted-foreground mb-3 space-y-2">
+                      <p><strong className="text-foreground">Instagram:</strong> Instagram is where I occasionally share learning updates, projects, and professional milestones.</p>
+                      <p><strong className="text-foreground">Snapchat:</strong> For informal conversations or casual connections, Snapchat is another way to reach me.</p>
+                    </div>
                     <div className="flex gap-3 flex-wrap">
                       <a href="https://www.instagram.com/ankur__sharmaaa/?__pwa=1" target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 rounded-full bg-pink-500/10 text-pink-500 border border-pink-500/20 hover:bg-pink-500/20 transition-colors">Instagram</a>
                       <a href="https://www.snapchat.com/add/asharma231231" target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 rounded-full bg-yellow-400/10 text-yellow-500 border border-yellow-400/20 hover:bg-yellow-400/20 transition-colors">Snapchat</a>
+                      <a
+                        href="mailto:ankurbpradhan@gmail.com?subject=Say%20Hello&body=Hey%20Ankur,%20I%20came%20across%20your%20profile%20and%20just%20wanted%20to%20connect%20and%20say%20hello.%20Looking%20forward%20to%20staying%20in%20touch."
+                        className="text-xs px-3 py-1.5 rounded-full bg-pink-500/10 text-pink-500 border border-pink-500/20 hover:bg-pink-500/20 transition-colors"
+                      >
+                        Email (Say Hi)
+                      </a>
                     </div>
                   </div>
                 </div>
