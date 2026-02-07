@@ -85,6 +85,20 @@ const Projects = () => {
               transition={{ delay: index * 0.15, duration: 0.6 }}
             >
               <div className="relative z-10">
+                {/* Project Image */}
+                <div className="relative h-48 mb-6 rounded-xl overflow-hidden group-hover:shadow-lg transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent z-10" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute bottom-3 left-3 z-20">
+                    <span className="text-xs font-semibold px-2 py-1 rounded bg-primary/20 text-primary backdrop-blur-md border border-primary/20">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                   <div>
