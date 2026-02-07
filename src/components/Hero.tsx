@@ -24,9 +24,9 @@ const Hero = () => {
           {/* Profile Image */}
           <motion.div
             className="relative mb-8"
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
+            transition={{ duration: 0.5 }}
           >
             {/* Outer glow ring */}
             <motion.div
@@ -110,20 +110,21 @@ const Hero = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
+            transition={{ duration: 0.6 }}
           >
             <span className="neon-text">Ankur Sharma</span>
           </motion.h1>
 
           {/* Typing Subtitle */}
-          <motion.div
+          <motion.h2
             className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mb-8 h-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
           >
             <TypingText texts={roles} />
-          </motion.div>
+            <span className="sr-only">Software Engineer, Web Developer, ML Enthusiast, Problem Solver</span>
+          </motion.h2>
 
           {/* Description */}
           <motion.p

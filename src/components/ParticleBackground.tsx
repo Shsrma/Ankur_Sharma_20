@@ -122,6 +122,12 @@ const ParticleBackground = () => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mouseRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }
+    };
+
     resizeCanvas();
     initParticles();
     drawParticles();
@@ -131,6 +137,7 @@ const ParticleBackground = () => {
       initParticles();
     });
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove);
 
     return () => {
       if (animationRef.current) {
@@ -138,6 +145,7 @@ const ParticleBackground = () => {
       }
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
 
