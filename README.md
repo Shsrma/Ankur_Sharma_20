@@ -299,7 +299,7 @@ This project demonstrates:
 - **Kaggle**: https://www.kaggle.com/ankur20sharma
 
 ### 📧 Contact
-- **Primary Email**: ankur.sharma2003920@gmail.com
+- **Primary Email**: ankurbpradhan@gmail.com
 - **Business Email**: ankurbpradhan@outlook.com
 - **WhatsApp**: https://wa.me/919414407192
 
@@ -323,4 +323,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **⭐ If you found this helpful, please give it a star!**
 
-Made with ❤️ by Ankur Sharma | Last updated: February 2026
+Made by Ankur Sharma | Last updated: February 2026
