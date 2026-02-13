@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Briefcase, Users, Laptop, Globe, Database, Coffee, Mail, Linkedin, Github, MessageSquare, ExternalLink } from 'lucide-react';
 import { toast } from 'sonner';
 import { contactAPI } from '@/lib/api';
+import TopMessages from '@/components/TopMessages';
 
 // --- Types ---
 interface FormData {
@@ -277,6 +278,15 @@ const Contact = () => {
                 )}
               </AnimatePresence>
             </motion.div>
+
+            {/* Recent Messages Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <TopMessages />
+            </motion.div>
           </div>
 
           {/* Right Column: Contact Form (5 columns) */}
@@ -331,6 +341,7 @@ const Contact = () => {
                       value={formData.recipient}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary outline-none appearance-none cursor-pointer"
+                      aria-label="Select recipient for your message"
                     >
                       <option value="both">General (Send to Both)</option>
                       <option value="gmail">Hiring/Freelance (Gmail)</option>

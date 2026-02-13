@@ -20,6 +20,14 @@ interface ContactFormData {
   recipient?: 'gmail' | 'outlook' | 'both';
 }
 
+export interface TopMessage {
+  id: string;
+  name: string;
+  message: string;
+  createdAt: string;
+  status: string;
+}
+
 interface Project {
   _id: string;
   title: string;
@@ -75,6 +83,12 @@ export const contactAPI = {
       method: 'POST',
       body: JSON.stringify(formData),
     }),
+
+  /**
+   * Get top messages for public display
+   */
+  getTopMessages: (limit = 5) =>
+    apiRequest<TopMessage[]>(`/contact/top?limit=${limit}`),
 };
 
 /**

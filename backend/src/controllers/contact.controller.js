@@ -2,6 +2,41 @@ import Contact from "../models/Contact.js";
 import nodemailer from "nodemailer";
 
 /**
+ * Get top/recent contact submissions for public display
+ */
+export const getTopMessages = async (req, res, next) => {
+  try {
+    const { limit = 5 } = req.query;
+    
+    // Get recent messages, exclude sensitive information
+    const messages = await Contact.find({ status: { $in: ['new', 'read'] } })
+      .sort({ createdAt: -1 })
+      .limit(parseInt(limit))
+      .select('-ipAddress -phone')
+      .lean();
+
+    // Format messages for public display
+    const formattedMessages = messages.map(msg => ({
+      id: msg._id,
+      name: msg.name,
+      message: msg.message.length > 150 
+        ? msg.message.substring(0, 150) + '...' 
+        : msg.message,
+      createdAt: msg.createdAt,
+      status: msg.status
+    }));
+
+    return res.status(200).json({
+      success: true,
+      count: formattedMessages.length,
+      data: formattedMessages,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
  * Get all contact submissions (admin only)
  */
 export const getContacts = async (req, res, next) => {

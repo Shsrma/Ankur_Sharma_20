@@ -288,10 +288,25 @@ This project demonstrates:
 
 ## 🔗 Links
 
-- **Live Portfolio**: https://ankur-sharma.me
+### 🚀 Live Deployments
+- **Primary Portfolio**: https://ankur-sharma.me
+- **Netlify Deployment**: https://ankursharma-20.netlify.app/
+- **Vercel Deployment**: https://ankur-sharma-20.vercel.app
+
+### 💼 Professional Networks
+- **LinkedIn**: https://www.linkedin.com/in/ankur-s-52686427b
 - **GitHub**: https://github.com/Shsrma
-- **LinkedIn**: https://linkedin.com/in/ankur-s-52686427b
-- **Email**: ankur.sharma2003920@gmail.com
+- **Kaggle**: https://www.kaggle.com/ankur20sharma
+
+### 📧 Contact
+- **Primary Email**: ankur.sharma2003920@gmail.com
+- **Business Email**: ankurbpradhan@outlook.com
+- **WhatsApp**: https://wa.me/919414407192
+
+### 🌐 Social Media
+- **Instagram**: https://www.instagram.com/ankur__sharmaaa/
+- **Snapchat**: https://www.snapchat.com/add/asharma231231
+- **Discord**: ankursharma_04180
 
 ## 📄 License
 
