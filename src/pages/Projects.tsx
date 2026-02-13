@@ -15,7 +15,8 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'Hybrid Blockchain Cloud Storage',
-    description: 'A secure decentralized storage solution addressing data privacy and integrity. Combines the immutability of blockchain with the scalability of cloud storage to prevent unauthorized tampering.',
+    description:
+      'A secure decentralized storage solution addressing data privacy and integrity. Combines the immutability of blockchain with the scalability of cloud storage to prevent unauthorized tampering.',
     technologies: ['Python', 'Blockchain', 'Advanced Encryption', 'SHA-256', 'Cloud Architecture'],
     github: 'https://github.com/Shsrma',
     timeline: 'Jul 2025 – Nov 2025',
@@ -29,7 +30,8 @@ const projects: Project[] = [
   },
   {
     title: 'AI Fraud Detection System',
-    description: 'Real-time transaction monitoring system designed to identify and prevent fraudulent credit card activities using advanced machine learning algorithms.',
+    description:
+      'Real-time transaction monitoring system designed to identify and prevent fraudulent credit card activities using advanced machine learning algorithms.',
     technologies: ['Python', 'Scikit-learn', 'Pandas', 'MySQL', 'REST API'],
     github: 'https://github.com/Shsrma',
     timeline: 'Jul 2025 – Nov 2025',
@@ -43,7 +45,8 @@ const projects: Project[] = [
   },
   {
     title: 'Disease Prediction Model',
-    description: 'Healthcare capability demonstrator predicting potential diseases based on user-reported symptoms, aiding in early diagnosis and awareness.',
+    description:
+      'Healthcare capability demonstrator predicting potential diseases based on user-reported symptoms, aiding in early diagnosis and awareness.',
     technologies: ['Python', 'NumPy', 'Matplotlib', 'Machine Learning', 'Data Viz'],
     github: 'https://github.com/Shsrma',
     timeline: '2024',
@@ -69,9 +72,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="section-title">Featured Projects</h1>
-          <p className="section-subtitle">
-            Building innovative solutions with modern technologies
-          </p>
+          <p className="section-subtitle">Building innovative solutions with modern technologies</p>
         </motion.div>
 
         {/* Projects Grid */}
@@ -135,9 +136,7 @@ const Projects = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+                <p className="text-muted-foreground mb-6 leading-relaxed">{project.description}</p>
 
                 {/* Highlights */}
                 <div className="mb-6">
@@ -151,9 +150,7 @@ const Projects = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.15 + i * 0.1 }}
                       >
-                        <span
-                          className="w-1.5 h-1.5 rounded-full mt-2 shrink-0 block bg-gradient-to-r from-cyan-400 to-blue-500"
-                        />
+                        <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0 block bg-gradient-to-r from-cyan-400 to-blue-500" />
                         {highlight}
                       </motion.li>
                     ))}
@@ -180,7 +177,8 @@ const Projects = () => {
               <motion.div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
                 style={{
-                  background: 'linear-gradient(135deg, hsl(var(--glow-cyan) / 0.05) 0%, hsl(var(--glow-violet) / 0.05) 100%)',
+                  background:
+                    'linear-gradient(135deg, hsl(var(--glow-cyan) / 0.05) 0%, hsl(var(--glow-violet) / 0.05) 100%)',
                 }}
               />
             </motion.div>
@@ -194,9 +192,7 @@ const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          <p className="text-muted-foreground mb-6">
-            Want to see more of my work?
-          </p>
+          <p className="text-muted-foreground mb-6">Want to see more of my work?</p>
           <motion.a
             href="https://github.com/Shsrma"
             target="_blank"

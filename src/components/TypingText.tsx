@@ -14,25 +14,28 @@ const TypingText = ({ texts, className = '' }: TypingTextProps) => {
 
   useEffect(() => {
     const currentText = texts[currentTextIndex];
-    
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (currentCharIndex < currentText.length) {
-          setDisplayText(currentText.substring(0, currentCharIndex + 1));
-          setCurrentCharIndex(currentCharIndex + 1);
+
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          if (currentCharIndex < currentText.length) {
+            setDisplayText(currentText.substring(0, currentCharIndex + 1));
+            setCurrentCharIndex(currentCharIndex + 1);
+          } else {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          if (currentCharIndex > 0) {
+            setDisplayText(currentText.substring(0, currentCharIndex - 1));
+            setCurrentCharIndex(currentCharIndex - 1);
+          } else {
+            setIsDeleting(false);
+            setCurrentTextIndex((currentTextIndex + 1) % texts.length);
+          }
         }
-      } else {
-        if (currentCharIndex > 0) {
-          setDisplayText(currentText.substring(0, currentCharIndex - 1));
-          setCurrentCharIndex(currentCharIndex - 1);
-        } else {
-          setIsDeleting(false);
-          setCurrentTextIndex((currentTextIndex + 1) % texts.length);
-        }
-      }
-    }, isDeleting ? 50 : 100);
+      },
+      isDeleting ? 50 : 100,
+    );
 
     return () => clearTimeout(timeout);
   }, [currentCharIndex, isDeleting, currentTextIndex, texts]);

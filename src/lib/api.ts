@@ -43,10 +43,7 @@ interface Project {
 /**
  * Generic API request handler
  */
-async function apiRequest<T>(
-  endpoint: string,
-  options: RequestInit = {},
-): Promise<ApiResponse<T>> {
+async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
   const url = `${API_BASE_URL}${endpoint}`;
 
   try {
@@ -87,8 +84,7 @@ export const contactAPI = {
   /**
    * Get top messages for public display
    */
-  getTopMessages: (limit = 5) =>
-    apiRequest<TopMessage[]>(`/contact/top?limit=${limit}`),
+  getTopMessages: (limit = 5) => apiRequest<TopMessage[]>(`/contact/top?limit=${limit}`),
 };
 
 /**
@@ -107,7 +103,7 @@ export const projectAPI = {
     apiRequest<Project[]>('/projects', {
       method: 'GET',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
       },
     }).then((res) => {
       // Note: This would need backend support for ?featured=true

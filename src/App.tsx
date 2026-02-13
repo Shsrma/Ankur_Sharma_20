@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 import CursorGlow from './components/CursorGlow';
+import VisitorEngagement from './components/VisitorEngagement';
 import Index from './pages/Index';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -60,6 +61,7 @@ const App = () => {
                 </Routes>
               </main>
               <Footer />
+              <VisitorEngagement />
             </div>
           </BrowserRouter>
         </TooltipProvider>

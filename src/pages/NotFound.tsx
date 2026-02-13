@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { useLocation, Link } from "react-router-dom";
-import { Home, ArrowLeft } from "lucide-react";
+import { motion } from 'framer-motion';
+import { useLocation, Link } from 'react-router-dom';
+import { Home, ArrowLeft } from 'lucide-react';
 
 const NotFound = () => {
   const location = useLocation();
@@ -13,9 +13,9 @@ const NotFound = () => {
           className="relative mb-8"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, type: "spring" }}
+          transition={{ duration: 0.8, type: 'spring' }}
         >
-          <h1 
+          <h1
             className="text-[150px] md:text-[200px] font-display font-bold leading-none"
             style={{
               background: 'var(--gradient-primary)',
@@ -26,7 +26,7 @@ const NotFound = () => {
           >
             404
           </h1>
-          
+
           {/* Glow effect behind */}
           <motion.div
             className="absolute inset-0 blur-3xl opacity-30"
@@ -38,7 +38,7 @@ const NotFound = () => {
             transition={{
               duration: 3,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
           />
         </motion.div>
@@ -53,8 +53,8 @@ const NotFound = () => {
             Lost in <span className="neon-text">Cyberspace</span>
           </h2>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            The page "{location.pathname}" doesn't exist in this dimension. 
-            Let's get you back on track.
+            The page "{location.pathname}" doesn't exist in this dimension. Let's get you back on
+            track.
           </p>
         </motion.div>
 

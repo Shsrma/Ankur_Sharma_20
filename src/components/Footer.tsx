@@ -11,7 +11,8 @@ const Footer = () => {
       <div
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center top, hsl(var(--glow-cyan) / 0.15) 0%, transparent 70%)',
+          background:
+            'radial-gradient(ellipse at center top, hsl(var(--glow-cyan) / 0.15) 0%, transparent 70%)',
         }}
       />
 
@@ -34,8 +35,8 @@ const Footer = () => {
               <span className="font-display font-semibold text-lg neon-text">ANKUR SHARMA</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Software Engineer & Web Developer passionate about building innovative solutions
-              with modern technologies.
+              Software Engineer & Web Developer passionate about building innovative solutions with
+              modern technologies.
             </p>
           </motion.div>
 
@@ -76,7 +77,11 @@ const Footer = () => {
             <h3 className="font-display font-semibold mb-4">Connect</h3>
             <div className="flex gap-3">
               {[
-                { icon: Linkedin, url: 'https://www.linkedin.com/in/ankur-s-52686427b', color: 'hsl(210, 100%, 50%)' },
+                {
+                  icon: Linkedin,
+                  url: 'https://www.linkedin.com/in/ankur-s-52686427b',
+                  color: 'hsl(210, 100%, 50%)',
+                },
                 { icon: Github, url: 'https://github.com/Shsrma', color: 'hsl(0, 0%, 70%)' },
                 { icon: Mail, url: 'mailto:ankurbpradhan@gmail.com', color: 'hsl(0, 100%, 65%)' },
               ].map((social, index) => (
@@ -108,7 +113,8 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © {currentYear} Ankur Sharma.          </p>
+            © {currentYear} Ankur Sharma.{' '}
+          </p>
           <p className="text-xs text-muted-foreground">
             Software Engineer | Web Developer | ML Enthusiast
           </p>

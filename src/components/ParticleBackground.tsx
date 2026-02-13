@@ -83,8 +83,12 @@ const ParticleBackground = () => {
 
         // Draw particle
         const gradient = ctx.createRadialGradient(
-          particle.x, particle.y, 0,
-          particle.x, particle.y, particle.size * 2
+          particle.x,
+          particle.y,
+          0,
+          particle.x,
+          particle.y,
+          particle.size * 2,
         );
 
         const alpha = isDark ? particle.opacity : particle.opacity * 0.6;

@@ -36,10 +36,11 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? 'py-3 backdrop-blur-xl bg-background/70 border-b border-border/50 shadow-lg'
-          : 'py-5 bg-transparent'
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? 'py-3 backdrop-blur-xl bg-background/70 border-b border-border/50 shadow-lg'
+            : 'py-5 bg-transparent'
+        }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
@@ -85,8 +86,9 @@ const Navbar = () => {
             {navItems.map((item) => (
               <Link key={item.path} to={item.path}>
                 <motion.div
-                  className={`nav-link ${location.pathname === item.path ? 'text-primary' : 'text-muted-foreground'
-                    }`}
+                  className={`nav-link ${
+                    location.pathname === item.path ? 'text-primary' : 'text-muted-foreground'
+                  }`}
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                 >
@@ -123,11 +125,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </motion.button>
           </div>
         </div>
@@ -141,45 +139,94 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-20 z-40 p-4 md:hidden"
+            className="fixed inset-0 top-20 z-40 md:hidden"
           >
-            <div className="glass-card p-4 rounded-2xl">
-              <div className="flex flex-col gap-2">
-                {navItems.map((item, index) => (
-                  <motion.div
-                    key={item.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            
+            {/* Menu Content */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-background border-l border-border/50 shadow-2xl"
+            >
+              <div className="h-full flex flex-col">
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-border/50">
+                  <h3 className="text-lg font-semibold">Menu</h3>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg hover:bg-muted/50 transition-colors"
                   >
-                    <Link to={item.path}>
-                      <div
-                        className={`px-4 py-3 rounded-xl transition-all duration-300 ${location.pathname === item.path
-                          ? 'bg-primary/10 text-primary'
-                          : 'text-muted-foreground hover:bg-muted/50'
-                          }`}
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Navigation Items */}
+                <div className="flex-1 overflow-y-auto p-4">
+                  <div className="flex flex-col gap-2">
+                    {navItems.map((item, index) => (
+                      <motion.div
+                        key={item.path}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
                       >
-                        {item.name}
-                      </div>
-                    </Link>
-                  </motion.div>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navItems.length * 0.1 }}
-                >
-                  <a
-                    href="/Ankur_Sharma-ResumeD.pdf"
-                    download
-                    className="flex items-center gap-2 px-4 py-3 rounded-xl text-muted-foreground hover:bg-muted/50 transition-all duration-300"
+                        <Link 
+                          to={item.path}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <div
+                            className={`px-4 py-4 rounded-xl transition-all duration-300 flex items-center justify-between ${
+                              location.pathname === item.path
+                                ? 'bg-primary/10 text-primary border border-primary/20'
+                                : 'text-muted-foreground hover:bg-muted/50'
+                            }`}
+                          >
+                            <span className="font-medium">{item.name}</span>
+                            {location.pathname === item.path && (
+                              <div className="w-2 h-2 rounded-full bg-primary" />
+                            )}
+                          </div>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Resume Download */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: navItems.length * 0.05 }}
+                    className="mt-6 pt-6 border-t border-border/50"
                   >
-                    <Download className="w-4 h-4" />
-                    Download Resume
-                  </a>
-                </motion.div>
+                    <a
+                      href="/Ankur_Sharma-ResumeD.pdf"
+                      download="AnkurSharma-Resume.pdf"
+                      className="flex items-center gap-3 px-4 py-4 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300"
+                    >
+                      <Download className="w-5 h-5" />
+                      <span className="font-medium">Download Resume</span>
+                    </a>
+                  </motion.div>
+                </div>
+
+                {/* Footer */}
+                <div className="p-4 border-t border-border/50">
+                  <p className="text-xs text-muted-foreground text-center">
+                    © 2024 Ankur Sharma. All rights reserved.
+                  </p>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

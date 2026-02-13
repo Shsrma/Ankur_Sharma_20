@@ -9,10 +9,10 @@ const ThemeToggle = () => {
     // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     const shouldBeDark = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
     setIsDark(shouldBeDark);
-    
+
     if (shouldBeDark) {
       document.documentElement.classList.add('dark');
     } else {
@@ -23,7 +23,7 @@ const ThemeToggle = () => {
   const toggleTheme = () => {
     const newIsDark = !isDark;
     setIsDark(newIsDark);
-    
+
     if (newIsDark) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -38,8 +38,8 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       className="relative w-14 h-8 rounded-full p-1 transition-colors duration-300"
       style={{
-        background: isDark 
-          ? 'linear-gradient(135deg, hsl(222 47% 15%), hsl(270 30% 20%))' 
+        background: isDark
+          ? 'linear-gradient(135deg, hsl(222 47% 15%), hsl(270 30% 20%))'
           : 'linear-gradient(135deg, hsl(200 100% 90%), hsl(40 100% 90%))',
         boxShadow: isDark
           ? '0 0 20px hsl(var(--glow-violet) / 0.3), inset 0 0 10px hsl(var(--glow-cyan) / 0.2)'

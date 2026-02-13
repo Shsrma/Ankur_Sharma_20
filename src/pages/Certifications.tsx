@@ -94,9 +94,7 @@ const Certifications = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="section-title">Certifications & Achievements</h1>
-          <p className="section-subtitle">
-            Continuous learning and recognition in my journey
-          </p>
+          <p className="section-subtitle">Continuous learning and recognition in my journey</p>
         </motion.div>
 
         {/* Certifications Grid */}
@@ -110,7 +108,7 @@ const Certifications = () => {
             <Award className="w-7 h-7 text-primary" />
             <span className="neon-text">Certifications</span>
           </h2>
-          
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {certifications.map((cert, index) => (
               <motion.div
@@ -122,15 +120,17 @@ const Certifications = () => {
                 whileHover={{ scale: 1.03, y: -5 }}
               >
                 <div className="flex items-start gap-4">
-                  <div 
+                  <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:shadow-lg"
                     style={{
-                      background: cert.icon === 'coursera' 
-                        ? 'linear-gradient(135deg, hsl(210, 100%, 50%), hsl(210, 100%, 40%))'
-                        : 'linear-gradient(135deg, hsl(280, 100%, 50%), hsl(280, 100%, 40%))',
-                      boxShadow: cert.icon === 'coursera'
-                        ? '0 0 20px hsl(210 100% 50% / 0.3)'
-                        : '0 0 20px hsl(280 100% 50% / 0.3)',
+                      background:
+                        cert.icon === 'coursera'
+                          ? 'linear-gradient(135deg, hsl(210, 100%, 50%), hsl(210, 100%, 40%))'
+                          : 'linear-gradient(135deg, hsl(280, 100%, 50%), hsl(280, 100%, 40%))',
+                      boxShadow:
+                        cert.icon === 'coursera'
+                          ? '0 0 20px hsl(210 100% 50% / 0.3)'
+                          : '0 0 20px hsl(280 100% 50% / 0.3)',
                     }}
                   >
                     <Award className="w-6 h-6 text-white" />
@@ -141,7 +141,7 @@ const Certifications = () => {
                     </h3>
                     <p className="text-xs text-muted-foreground mb-2">{cert.issuer}</p>
                     <div className="flex items-center justify-between">
-                      <span 
+                      <span
                         className="text-xs px-2 py-1 rounded-full"
                         style={{
                           background: 'var(--glass-bg)',
@@ -183,7 +183,7 @@ const Certifications = () => {
 
           <div className="relative">
             {/* Vertical line */}
-            <div 
+            <div
               className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2"
               style={{ background: 'var(--gradient-primary)' }}
             />
@@ -200,12 +200,16 @@ const Certifications = () => {
                   transition={{ delay: 0.6 + index * 0.15 }}
                 >
                   {/* Content */}
-                  <div className={`flex-1 ml-16 md:ml-0 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:pl-12'}`}>
+                  <div
+                    className={`flex-1 ml-16 md:ml-0 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:pl-12'}`}
+                  >
                     <motion.div
                       className="glass-card p-6 inline-block max-w-md"
                       whileHover={{ scale: 1.02 }}
                     >
-                      <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
+                      <div
+                        className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}
+                      >
                         <Calendar className="w-4 h-4 text-muted-foreground" />
                         <span className="text-sm text-muted-foreground">{achievement.year}</span>
                       </div>

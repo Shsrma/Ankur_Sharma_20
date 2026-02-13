@@ -96,9 +96,7 @@ const SocialLinks = ({ variant = 'default' }: SocialLinksProps) => {
           }}
           aria-label={link.name}
         >
-          <span className="text-foreground transition-colors duration-300">
-            {link.icon}
-          </span>
+          <span className="text-foreground transition-colors duration-300">{link.icon}</span>
         </motion.a>
       ))}
     </div>

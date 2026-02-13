@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, GraduationCap, Briefcase, Code, BookOpen } from 'lucide-react';
 import OrbitalTechStack from '@/components/OrbitalTechStack';
+import WhyHireMe from '@/components/WhyHireMe';
+import Testimonials from '@/components/Testimonials';
 
 const timelineData = [
   {
@@ -15,7 +17,8 @@ const timelineData = [
     year: 'Jun 2024 - Jul 2024',
     title: 'Web Developer Intern',
     institution: 'InternPe, Jaipur',
-    description: 'Developed responsive web pages, implemented form validation, and collaborated using Git.',
+    description:
+      'Developed responsive web pages, implemented form validation, and collaborated using Git.',
     icon: Briefcase,
     type: 'experience',
   },
@@ -85,14 +88,15 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-display font-bold mb-4 neon-text">Who Am I?</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I am a final-year B.Tech Computer Science student at Vivekananda Global University, 
-                Jaipur, with a passion for creating innovative digital solutions. My expertise spans 
+                I am a final-year B.Tech Computer Science student at Vivekananda Global University,
+                Jaipur, with a passion for creating innovative digital solutions. My expertise spans
                 across full-stack web development, machine learning, and data analysis.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                With hands-on experience in developing responsive web applications and ML-powered systems, 
-                I enjoy solving complex problems and building applications that make a real-world impact. 
-                I'm constantly learning and exploring new technologies to stay at the forefront of innovation.
+                With hands-on experience in developing responsive web applications and ML-powered
+                systems, I enjoy solving complex problems and building applications that make a
+                real-world impact. I'm constantly learning and exploring new technologies to stay at
+                the forefront of innovation.
               </p>
             </div>
             <div>
@@ -113,7 +117,7 @@ const About = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + index * 0.1 }}
                   >
-                    <div 
+                    <div
                       className="w-2 h-2 rounded-full"
                       style={{ background: 'var(--gradient-primary)' }}
                     />
@@ -132,10 +136,10 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <h2 className="text-3xl font-display font-bold text-center mb-4 neon-text">Tech Arsenal</h2>
-          <p className="text-center text-muted-foreground mb-8">
-            Tools & Technologies I command
-          </p>
+          <h2 className="text-3xl font-display font-bold text-center mb-4 neon-text">
+            Tech Arsenal
+          </h2>
+          <p className="text-center text-muted-foreground mb-8">Tools & Technologies I command</p>
           <OrbitalTechStack />
         </motion.div>
 
@@ -145,7 +149,9 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h2 className="text-3xl font-display font-bold text-center mb-12 neon-text">My Journey</h2>
+          <h2 className="text-3xl font-display font-bold text-center mb-12 neon-text">
+            My Journey
+          </h2>
           <div className="max-w-3xl mx-auto">
             {timelineData.map((item, index) => (
               <motion.div
@@ -157,7 +163,7 @@ const About = () => {
               >
                 <div className="glass-card p-6 ml-4">
                   <div className="flex items-start gap-4">
-                    <div 
+                    <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                       style={{ background: 'var(--gradient-primary)' }}
                     >
@@ -182,6 +188,12 @@ const About = () => {
           </div>
         </motion.div>
       </div>
+      
+      {/* Why Hire Me Section */}
+      <WhyHireMe />
+      
+      {/* Testimonials Section */}
+      <Testimonials />
     </div>
   );
 };

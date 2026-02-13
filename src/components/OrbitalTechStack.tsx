@@ -39,7 +39,7 @@ const OrbitalTechStack = () => {
     const x = Math.cos(angle) * radius;
     const y = Math.sin(angle) * radius * 0.4; // Elliptical orbit
     const z = Math.sin(angle);
-    
+
     return { x, y, z };
   };
 
@@ -50,7 +50,8 @@ const OrbitalTechStack = () => {
         className="absolute w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center z-20"
         style={{
           background: 'var(--gradient-primary)',
-          boxShadow: '0 0 60px hsl(var(--glow-cyan) / 0.5), 0 0 120px hsl(var(--glow-violet) / 0.3)',
+          boxShadow:
+            '0 0 60px hsl(var(--glow-cyan) / 0.5), 0 0 120px hsl(var(--glow-violet) / 0.3)',
         }}
         animate={{
           boxShadow: [
@@ -66,7 +67,9 @@ const OrbitalTechStack = () => {
         }}
       >
         <span className="font-display text-sm md:text-base font-bold text-primary-foreground text-center">
-          TECH<br />ARSENAL
+          TECH
+          <br />
+          ARSENAL
         </span>
       </motion.div>
 
@@ -114,15 +117,14 @@ const OrbitalTechStack = () => {
             <div
               className="px-3 py-2 md:px-4 md:py-2.5 rounded-xl font-medium text-xs md:text-sm whitespace-nowrap transition-all duration-300"
               style={{
-                background: hoveredSkill === skill.name
-                  ? skill.color
-                  : 'var(--glass-bg)',
+                background: hoveredSkill === skill.name ? skill.color : 'var(--glass-bg)',
                 backdropFilter: 'blur(10px)',
                 border: `1px solid ${hoveredSkill === skill.name ? skill.color : 'var(--glass-border)'}`,
                 color: hoveredSkill === skill.name ? 'white' : 'inherit',
-                boxShadow: hoveredSkill === skill.name
-                  ? `0 0 30px ${skill.color}80, 0 0 60px ${skill.color}40`
-                  : 'none',
+                boxShadow:
+                  hoveredSkill === skill.name
+                    ? `0 0 30px ${skill.color}80, 0 0 60px ${skill.color}40`
+                    : 'none',
               }}
             >
               {skill.name}

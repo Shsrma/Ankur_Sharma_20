@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Download, ArrowRight } from 'lucide-react';
+import { Download, ArrowRight, Mail, Star, Users, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import profileImage from '@/assets/profile.jpeg';
 import TypingText from '@/components/TypingText';
@@ -10,12 +10,7 @@ const Hero = () => {
   const [showSocials, setShowSocials] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const roles = [
-    'Software Engineer',
-    'Web Developer',
-    'ML Enthusiast',
-    'Problem Solver',
-  ];
+  const roles = ['Software Engineer', 'Web Developer', 'ML Enthusiast', 'Problem Solver'];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-12">
@@ -51,7 +46,8 @@ const Hero = () => {
             <motion.div
               className="absolute -inset-2 rounded-full"
               style={{
-                background: 'conic-gradient(from 0deg, hsl(var(--glow-cyan)), hsl(var(--glow-violet)), hsl(var(--glow-pink)), hsl(var(--glow-cyan)))',
+                background:
+                  'conic-gradient(from 0deg, hsl(var(--glow-cyan)), hsl(var(--glow-violet)), hsl(var(--glow-pink)), hsl(var(--glow-cyan)))',
                 padding: '3px',
               }}
               animate={{ rotate: 360 }}
@@ -80,7 +76,8 @@ const Hero = () => {
               <motion.div
                 className="absolute inset-0 opacity-30"
                 style={{
-                  background: 'linear-gradient(135deg, transparent 40%, hsl(var(--glow-cyan) / 0.4) 50%, transparent 60%)',
+                  background:
+                    'linear-gradient(135deg, transparent 40%, hsl(var(--glow-cyan) / 0.4) 50%, transparent 60%)',
                   backgroundSize: '200% 200%',
                 }}
                 animate={{
@@ -123,7 +120,9 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             <TypingText texts={roles} />
-            <span className="sr-only">Software Engineer, Web Developer, ML Enthusiast, Problem Solver</span>
+            <span className="sr-only">
+              Software Engineer, Web Developer, ML Enthusiast, Problem Solver
+            </span>
           </motion.h2>
 
           {/* Description */}
@@ -133,17 +132,38 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            B.Tech Computer Science student passionate about building innovative
-            solutions with modern technologies. Experienced in full-stack development,
-            machine learning, and creating impactful real-world applications.
+            B.Tech Computer Science student passionate about building innovative solutions with
+            modern technologies. Experienced in full-stack development, machine learning, and
+            creating impactful real-world applications.
           </motion.p>
+
+          {/* Quick Stats */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-6 mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+          >
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Briefcase className="w-4 h-4 text-primary" />
+              <span>2+ Years Experience</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Users className="w-4 h-4 text-primary" />
+              <span>50+ Happy Clients</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Star className="w-4 h-4 text-primary" />
+              <span>5.0 Rating</span>
+            </div>
+          </motion.div>
 
           {/* Buttons */}
           <motion.div
             className="flex flex-wrap items-center justify-center gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
           >
             <motion.a
               href="/Ankur_Sharma-ResumeD.pdf"
@@ -155,6 +175,17 @@ const Hero = () => {
               <Download className="w-5 h-5" />
               Download Resume
             </motion.a>
+
+            <Link to="/contact">
+              <motion.button
+                className="primary-button gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Mail className="w-5 h-5" />
+                Get In Touch
+              </motion.button>
+            </Link>
 
             <motion.button
               onClick={() => setShowSocials(!showSocials)}
@@ -197,7 +228,10 @@ const Hero = () => {
               y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' },
             }}
           >
-            <Link to="/about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <Link
+              to="/about"
+              className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            >
               <span className="text-sm">Explore More</span>
               <div className="w-6 h-10 rounded-full border-2 border-current flex justify-center pt-2">
                 <motion.div

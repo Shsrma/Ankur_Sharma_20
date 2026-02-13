@@ -36,7 +36,7 @@ const TopMessages = () => {
     const now = new Date();
     const diffTime = Math.abs(now.getTime() - date.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
+
     if (diffDays === 0) {
       return 'Today';
     } else if (diffDays === 1) {
@@ -44,10 +44,10 @@ const TopMessages = () => {
     } else if (diffDays < 7) {
       return `${diffDays} days ago`;
     } else {
-      return date.toLocaleDateString('en-US', { 
-        month: 'short', 
+      return date.toLocaleDateString('en-US', {
+        month: 'short',
         day: 'numeric',
-        year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined
+        year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined,
       });
     }
   };
@@ -96,7 +96,9 @@ const TopMessages = () => {
           className="p-2 rounded-lg hover:bg-muted/50 transition-colors disabled:opacity-50"
           title="Refresh messages"
         >
-          <RefreshCw className={`w-4 h-4 text-muted-foreground ${refreshing ? 'animate-spin' : ''}`} />
+          <RefreshCw
+            className={`w-4 h-4 text-muted-foreground ${refreshing ? 'animate-spin' : ''}`}
+          />
         </button>
       </div>
 
@@ -176,7 +178,8 @@ const TopMessages = () => {
           className="mt-6 pt-4 border-t border-border/30"
         >
           <p className="text-xs text-muted-foreground text-center">
-            Showing latest {messages.length} messages • Messages are displayed publicly for transparency
+            Showing latest {messages.length} messages • Messages are displayed publicly for
+            transparency
           </p>
         </motion.div>
       )}

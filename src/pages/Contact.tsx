@@ -1,6 +1,19 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Briefcase, Users, Laptop, Globe, Database, Coffee, Mail, Linkedin, Github, MessageSquare, ExternalLink } from 'lucide-react';
+import {
+  Send,
+  Briefcase,
+  Users,
+  Laptop,
+  Globe,
+  Database,
+  Coffee,
+  Mail,
+  Linkedin,
+  Github,
+  MessageSquare,
+  ExternalLink,
+} from 'lucide-react';
 import { toast } from 'sonner';
 import { contactAPI } from '@/lib/api';
 import TopMessages from '@/components/TopMessages';
@@ -46,10 +59,22 @@ const CATEGORIES: ContactCategory[] = [
     description: 'For full-time roles, internships, or contract opportunities.',
     color: 'hsl(210, 100%, 50%)',
     platforms: [
-      { name: 'LinkedIn', icon: Linkedin, value: 'Profile', href: 'https://www.linkedin.com/in/ankur-s-52686427b', primary: true },
-      { name: 'Email', icon: Mail, value: 'ankurbpradhan@gmail.com', href: 'mailto:ankurbpradhan@gmail.com' },
+      {
+        name: 'LinkedIn',
+        icon: Linkedin,
+        value: 'Profile',
+        href: 'https://www.linkedin.com/in/ankur-s-52686427b',
+        primary: true,
+      },
+      {
+        name: 'Email',
+        icon: Mail,
+        value: 'ankurbpradhan@gmail.com',
+        href: 'mailto:ankurbpradhan@gmail.com',
+      },
     ],
-    suggestedMessage: "Hello Ankur, I came across your portfolio and I'm reaching out regarding a potential role. I'd be happy to discuss further."
+    suggestedMessage:
+      "Hello Ankur, I came across your portfolio and I'm reaching out regarding a potential role. I'd be happy to discuss further.",
   },
   {
     id: 'collaboration',
@@ -58,10 +83,22 @@ const CATEGORIES: ContactCategory[] = [
     description: 'Interested in working together on a project?',
     color: 'hsl(270, 100%, 65%)',
     platforms: [
-      { name: 'GitHub', icon: Github, value: 'Shsrma', href: 'https://github.com/Shsrma', primary: true },
-      { name: 'Discord', icon: MessageSquare, value: 'ankursharma_04180', href: 'https://discord.com' },
+      {
+        name: 'GitHub',
+        icon: Github,
+        value: 'Shsrma',
+        href: 'https://github.com/Shsrma',
+        primary: true,
+      },
+      {
+        name: 'Discord',
+        icon: MessageSquare,
+        value: 'ankursharma_04180',
+        href: 'https://discord.com',
+      },
     ],
-    suggestedMessage: "Hi Ankur, I reviewed your work and would be interested in collaborating on a project. Let's discuss ideas and scope."
+    suggestedMessage:
+      "Hi Ankur, I reviewed your work and would be interested in collaborating on a project. Let's discuss ideas and scope.",
   },
   {
     id: 'freelance',
@@ -70,21 +107,40 @@ const CATEGORIES: ContactCategory[] = [
     description: 'Need a developer for your next big idea?',
     color: 'hsl(140, 70%, 50%)',
     platforms: [
-      { name: 'Email', icon: Mail, value: 'ankurbpradhan@gmail.com', href: 'mailto:ankurbpradhan@gmail.com?subject=Freelance%20Inquiry', primary: true },
-      { name: 'WhatsApp', icon: MessageSquare, value: '+91 9414407192', href: 'https://wa.me/919414407192' },
+      {
+        name: 'Email',
+        icon: Mail,
+        value: 'ankurbpradhan@gmail.com',
+        href: 'mailto:ankurbpradhan@gmail.com?subject=Freelance%20Inquiry',
+        primary: true,
+      },
+      {
+        name: 'WhatsApp',
+        icon: MessageSquare,
+        value: '+91 9414407192',
+        href: 'https://wa.me/919414407192',
+      },
     ],
-    suggestedMessage: "Hello Ankur, I'm looking for a developer for a freelance project and would like to discuss details."
+    suggestedMessage:
+      "Hello Ankur, I'm looking for a developer for a freelance project and would like to discuss details.",
   },
   {
     id: 'networking',
     label: 'Networking',
     icon: Globe,
-    description: 'Let\'s connect and grow our professional network.',
+    description: "Let's connect and grow our professional network.",
     color: 'hsl(30, 100%, 50%)',
     platforms: [
-      { name: 'LinkedIn', icon: Linkedin, value: 'Connect', href: 'https://www.linkedin.com/in/ankur-s-52686427b', primary: true },
+      {
+        name: 'LinkedIn',
+        icon: Linkedin,
+        value: 'Connect',
+        href: 'https://www.linkedin.com/in/ankur-s-52686427b',
+        primary: true,
+      },
     ],
-    suggestedMessage: "Hi Ankur, I'd like to connect professionally and stay in touch regarding future opportunities."
+    suggestedMessage:
+      "Hi Ankur, I'd like to connect professionally and stay in touch regarding future opportunities.",
   },
   {
     id: 'data',
@@ -93,21 +149,34 @@ const CATEGORIES: ContactCategory[] = [
     description: 'Discussing datasets, models, or Kaggle competitions.',
     color: 'hsl(190, 100%, 50%)',
     platforms: [
-      { name: 'Kaggle', icon: Globe, value: 'ankur20sharma', href: 'https://www.kaggle.com/ankur20sharma', primary: true },
+      {
+        name: 'Kaggle',
+        icon: Globe,
+        value: 'ankur20sharma',
+        href: 'https://www.kaggle.com/ankur20sharma',
+        primary: true,
+      },
     ],
-    suggestedMessage: "Hello Ankur, I came across your Kaggle profile and would love to connect regarding data science or ML topics."
+    suggestedMessage:
+      'Hello Ankur, I came across your Kaggle profile and would love to connect regarding data science or ML topics.',
   },
   {
     id: 'casual',
     label: 'Casual',
     icon: Coffee,
-    description: 'Just want to say hi? I\'m always up for a chat.',
+    description: "Just want to say hi? I'm always up for a chat.",
     color: 'hsl(330, 100%, 60%)',
     platforms: [
-      { name: 'Instagram', icon: Globe, value: '@ankur__sharmaaa', href: 'https://www.instagram.com/ankur__sharmaaa/', primary: true },
+      {
+        name: 'Instagram',
+        icon: Globe,
+        value: '@ankur__sharmaaa',
+        href: 'https://www.instagram.com/ankur__sharmaaa/',
+        primary: true,
+      },
     ],
-    suggestedMessage: "Hey Ankur, just wanted to connect and say hello 🙂"
-  }
+    suggestedMessage: 'Hey Ankur, just wanted to connect and say hello 🙂',
+  },
 ];
 
 const Contact = () => {
@@ -122,7 +191,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formErrors, setFormErrors] = useState<FormError[]>([]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setFormErrors((prev) => prev.filter((err) => err.field !== name));
@@ -162,8 +233,8 @@ const Contact = () => {
 
   // Helper to pre-fill message based on category
   const applySuggestedMessage = (msg: string) => {
-    setFormData(prev => ({ ...prev, message: msg }));
-    toast.info("Message template applied!");
+    setFormData((prev) => ({ ...prev, message: msg }));
+    toast.info('Message template applied!');
   };
 
   return (
@@ -197,11 +268,14 @@ const Contact = () => {
                 {CATEGORIES.map((category, index) => (
                   <motion.button
                     key={category.id}
-                    onClick={() => setSelectedCategory(selectedCategory === category.id ? null : category.id)}
-                    className={`p-4 rounded-xl border text-left transition-all duration-300 relative overflow-hidden group ${selectedCategory === category.id
+                    onClick={() =>
+                      setSelectedCategory(selectedCategory === category.id ? null : category.id)
+                    }
+                    className={`p-4 rounded-xl border text-left transition-all duration-300 relative overflow-hidden group ${
+                      selectedCategory === category.id
                         ? 'bg-primary/10 border-primary shadow-[0_0_20px_hsl(var(--glow-cyan)/0.3)]'
                         : 'bg-muted/30 border-border/50 hover:border-primary/50 hover:bg-muted/50'
-                      }`}
+                    }`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -209,12 +283,16 @@ const Contact = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <div className="flex items-start gap-3 relative z-10">
-                      <div className={`p-2 rounded-lg bg-background/50 text-${category.id === 'hiring' ? 'blue' : 'primary'}-500`}>
+                      <div
+                        className={`p-2 rounded-lg bg-background/50 text-${category.id === 'hiring' ? 'blue' : 'primary'}-500`}
+                      >
                         <category.icon className="w-6 h-6" style={{ color: category.color }} />
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground">{category.label}</h3>
-                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{category.description}</p>
+                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                          {category.description}
+                        </p>
                       </div>
                     </div>
                   </motion.button>
@@ -236,41 +314,54 @@ const Contact = () => {
                       <div className="flex items-center justify-between mb-6">
                         <h3 className="text-xl font-bold flex items-center gap-2">
                           <span className="text-primary">Next Steps:</span>
-                          {CATEGORIES.find(c => c.id === selectedCategory)?.label}
+                          {CATEGORIES.find((c) => c.id === selectedCategory)?.label}
                         </h3>
                       </div>
 
                       <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                        {CATEGORIES.find(c => c.id === selectedCategory)?.platforms.map((platform) => (
-                          <a
-                            key={platform.name}
-                            href={platform.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-border/50 hover:border-primary/50 transition-all group"
-                          >
-                            <platform.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                            <div>
-                              <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{platform.name}</p>
-                              <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{platform.value}</p>
-                            </div>
-                            <ExternalLink className="w-4 h-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                          </a>
-                        ))}
+                        {CATEGORIES.find((c) => c.id === selectedCategory)?.platforms.map(
+                          (platform) => (
+                            <a
+                              key={platform.name}
+                              href={platform.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-border/50 hover:border-primary/50 transition-all group"
+                            >
+                              <platform.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                              <div>
+                                <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
+                                  {platform.name}
+                                </p>
+                                <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                                  {platform.value}
+                                </p>
+                              </div>
+                              <ExternalLink className="w-4 h-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </a>
+                          ),
+                        )}
                       </div>
 
                       <div className="bg-muted/30 p-4 rounded-xl border border-border/50">
                         <div className="flex items-center justify-between mb-2">
-                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Suggested Message</p>
+                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                            Suggested Message
+                          </p>
                           <button
-                            onClick={() => applySuggestedMessage(CATEGORIES.find(c => c.id === selectedCategory)?.suggestedMessage || "")}
+                            onClick={() =>
+                              applySuggestedMessage(
+                                CATEGORIES.find((c) => c.id === selectedCategory)
+                                  ?.suggestedMessage || '',
+                              )
+                            }
                             className="text-xs text-primary hover:underline font-medium"
                           >
                             Use this template ↓
                           </button>
                         </div>
                         <p className="text-sm italic text-muted-foreground/80">
-                          "{CATEGORIES.find(c => c.id === selectedCategory)?.suggestedMessage}"
+                          "{CATEGORIES.find((c) => c.id === selectedCategory)?.suggestedMessage}"
                         </p>
                       </div>
                     </div>
@@ -313,10 +404,15 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="Your Name"
-                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none ${getFieldError('name') ? 'border-red-500' : 'border-border focus:border-primary'
-                        }`}
+                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none ${
+                        getFieldError('name')
+                          ? 'border-red-500'
+                          : 'border-border focus:border-primary'
+                      }`}
                     />
-                    {getFieldError('name') && <p className="text-red-500 text-xs">{getFieldError('name')}</p>}
+                    {getFieldError('name') && (
+                      <p className="text-red-500 text-xs">{getFieldError('name')}</p>
+                    )}
                   </div>
 
                   {/* Email */}
@@ -328,10 +424,15 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="Email Address"
-                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none ${getFieldError('email') ? 'border-red-500' : 'border-border focus:border-primary'
-                        }`}
+                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none ${
+                        getFieldError('email')
+                          ? 'border-red-500'
+                          : 'border-border focus:border-primary'
+                      }`}
                     />
-                    {getFieldError('email') && <p className="text-red-500 text-xs">{getFieldError('email')}</p>}
+                    {getFieldError('email') && (
+                      <p className="text-red-500 text-xs">{getFieldError('email')}</p>
+                    )}
                   </div>
 
                   {/* Recipient */}
@@ -357,11 +458,19 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={4}
-                      placeholder="How can I help you?"
-                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none resize-none ${getFieldError('message') ? 'border-red-500' : 'border-border focus:border-primary'
-                        }`}
+                      placeholder="Tell me about your opportunity, project, or how we can work together..."
+                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none resize-none ${
+                        getFieldError('message')
+                          ? 'border-red-500'
+                          : 'border-border focus:border-primary'
+                      }`}
                     />
-                    {getFieldError('message') && <p className="text-red-500 text-xs">{getFieldError('message')}</p>}
+                    {getFieldError('message') && (
+                      <p className="text-red-500 text-xs">{getFieldError('message')}</p>
+                    )}
+                    <p className="text-xs text-muted-foreground text-right">
+                      {formData.message.length}/5000 characters
+                    </p>
                   </div>
 
                   <button
@@ -369,7 +478,9 @@ const Contact = () => {
                     disabled={isSubmitting}
                     className="magnetic-button w-full text-primary-foreground gap-2 disabled:opacity-50"
                   >
-                    {isSubmitting ? 'Sending...' : (
+                    {isSubmitting ? (
+                      'Sending...'
+                    ) : (
                       <span className="flex items-center justify-center gap-2">
                         Send Message <Send className="w-4 h-4" />
                       </span>
@@ -383,6 +494,6 @@ const Contact = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Contact;
