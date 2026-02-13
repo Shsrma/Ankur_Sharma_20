@@ -13,23 +13,23 @@ const Hero = () => {
   const roles = ['Software Engineer', 'Web Developer', 'ML Enthusiast', 'Problem Solver'];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-12">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 pb-12">
       <div className="container mx-auto">
         <div className="flex flex-col items-center text-center">
           {/* Profile Image */}
           <motion.div
-            className="relative mb-8"
+            className="relative mb-6 sm:mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
             {/* Outer glow ring */}
             <motion.div
-              className="absolute -inset-4 rounded-full"
+              className="absolute -inset-3 sm:-inset-4 rounded-full"
               style={{
                 background: 'var(--gradient-primary)',
                 opacity: 0.3,
-                filter: 'blur(20px)',
+                filter: 'blur(15px)',
               }}
               animate={{
                 scale: [1, 1.1, 1],
@@ -44,11 +44,11 @@ const Hero = () => {
 
             {/* Rotating border */}
             <motion.div
-              className="absolute -inset-2 rounded-full"
+              className="absolute -inset-2 sm:-inset-2 rounded-full"
               style={{
                 background:
                   'conic-gradient(from 0deg, hsl(var(--glow-cyan)), hsl(var(--glow-violet)), hsl(var(--glow-pink)), hsl(var(--glow-cyan)))',
-                padding: '3px',
+                padding: '2px',
               }}
               animate={{ rotate: 360 }}
               transition={{
@@ -61,7 +61,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Image container */}
-            <div className="relative w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-background">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-background">
               <motion.img
                 src={profileImage}
                 alt="Ankur Sharma"
@@ -94,7 +94,7 @@ const Hero = () => {
 
           {/* Greeting */}
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground mb-2"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground mb-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -104,7 +104,7 @@ const Hero = () => {
 
           {/* Name */}
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-3 sm:mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -114,7 +114,7 @@ const Hero = () => {
 
           {/* Typing Subtitle */}
           <motion.h2
-            className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mb-8 h-10"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mb-6 sm:mb-8 h-8 sm:h-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -127,7 +127,7 @@ const Hero = () => {
 
           {/* Description */}
           <motion.p
-            className="text-muted-foreground max-w-2xl mb-10 text-base md:text-lg leading-relaxed"
+            className="text-muted-foreground max-w-2xl mb-8 sm:mb-10 text-sm sm:text-base md:text-lg leading-relaxed px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
@@ -139,28 +139,30 @@ const Hero = () => {
 
           {/* Quick Stats */}
           <motion.div
-            className="flex flex-wrap justify-center gap-6 mb-10"
+            className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8 sm:mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Briefcase className="w-4 h-4 text-primary" />
-              <span>2+ Years Experience</span>
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+              <Briefcase className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+              <span className="hidden xs:inline">2+ Years</span>
+              <span className="xs:hidden">2+</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Users className="w-4 h-4 text-primary" />
-              <span>50+ Happy Clients</span>
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+              <Users className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+              <span className="hidden xs:inline">50+ Happy</span>
+              <span className="xs:hidden">50+</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Star className="w-4 h-4 text-primary" />
-              <span>5.0 Rating</span>
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+              <Star className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+              <span>5.0</span>
             </div>
           </motion.div>
 
           {/* Buttons */}
           <motion.div
-            className="flex flex-wrap items-center justify-center gap-4 mb-8"
+            className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full max-w-sm mx-auto sm:max-w-none"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
@@ -168,37 +170,37 @@ const Hero = () => {
             <motion.a
               href="/Ankur_Sharma-ResumeD.pdf"
               download="AnkurSharma-Resume.pdf"
-              className="magnetic-button text-primary-foreground gap-2"
+              className="magnetic-button text-primary-foreground gap-2 w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Download className="w-5 h-5" />
-              Download Resume
+              <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-sm sm:text-base">Download Resume</span>
             </motion.a>
 
-            <Link to="/contact">
+            <Link to="/contact" className="w-full sm:w-auto">
               <motion.button
-                className="primary-button gap-2"
+                className="primary-button gap-2 w-full justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Mail className="w-5 h-5" />
-                Get In Touch
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-sm sm:text-base">Get In Touch</span>
               </motion.button>
             </Link>
 
             <motion.button
               onClick={() => setShowSocials(!showSocials)}
-              className="ghost-button gap-2"
+              className="ghost-button gap-2 w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Connect With Me
+              <span className="text-sm sm:text-base">Connect With Me</span>
               <motion.span
                 animate={{ rotate: showSocials ? 90 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </motion.span>
             </motion.button>
           </motion.div>

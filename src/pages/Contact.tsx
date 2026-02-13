@@ -259,19 +259,19 @@ const Contact = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <h2 className="text-2xl font-display font-bold mb-6 flex items-center gap-3">
+              <h2 className="text-xl md:text-2xl font-display font-bold mb-4 sm:mb-6 flex items-center gap-3">
                 <span className="text-primary">01.</span>
                 How would you like to connect?
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {CATEGORIES.map((category, index) => (
                   <motion.button
                     key={category.id}
                     onClick={() =>
                       setSelectedCategory(selectedCategory === category.id ? null : category.id)
                     }
-                    className={`p-4 rounded-xl border text-left transition-all duration-300 relative overflow-hidden group ${
+                    className={`p-3 sm:p-4 rounded-xl border text-left transition-all duration-300 relative overflow-hidden group ${
                       selectedCategory === category.id
                         ? 'bg-primary/10 border-primary shadow-[0_0_20px_hsl(var(--glow-cyan)/0.3)]'
                         : 'bg-muted/30 border-border/50 hover:border-primary/50 hover:bg-muted/50'
@@ -286,13 +286,11 @@ const Contact = () => {
                       <div
                         className={`p-2 rounded-lg bg-background/50 text-${category.id === 'hiring' ? 'blue' : 'primary'}-500`}
                       >
-                        <category.icon className="w-6 h-6" style={{ color: category.color }} />
+                        <category.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: category.color }} />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground">{category.label}</h3>
-                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                          {category.description}
-                        </p>
+                        <h3 className="font-semibold text-foreground text-sm sm:text-base">{category.label}</h3>
+                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{category.description}</p>
                       </div>
                     </div>
                   </motion.button>
@@ -308,17 +306,17 @@ const Contact = () => {
                     animate={{ opacity: 1, height: 'auto', y: 0 }}
                     exit={{ opacity: 0, height: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="mt-8 overflow-hidden"
+                    className="mt-6 sm:mt-8 overflow-hidden"
                   >
-                    <div className="glass-card p-6 border-primary/20">
-                      <div className="flex items-center justify-between mb-6">
-                        <h3 className="text-xl font-bold flex items-center gap-2">
+                    <div className="glass-card p-4 sm:p-6 border-primary/20">
+                      <div className="flex items-center justify-between mb-4 sm:mb-6">
+                        <h3 className="text-lg sm:text-xl font-bold flex items-center gap-2">
                           <span className="text-primary">Next Steps:</span>
                           {CATEGORIES.find((c) => c.id === selectedCategory)?.label}
                         </h3>
                       </div>
 
-                      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                         {CATEGORIES.find((c) => c.id === selectedCategory)?.platforms.map(
                           (platform) => (
                             <a
@@ -326,41 +324,41 @@ const Contact = () => {
                               href={platform.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-border/50 hover:border-primary/50 transition-all group"
+                              className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-background/50 border border-border/50 hover:border-primary/50 transition-all group"
                             >
-                              <platform.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                              <platform.icon className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                               <div>
-                                <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
+                                <p className="text-xs sm:text-sm text-muted-foreground font-medium uppercase tracking-wider">
                                   {platform.name}
                                 </p>
-                                <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                                <p className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                                   {platform.value}
                                 </p>
                               </div>
-                              <ExternalLink className="w-4 h-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                              <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                             </a>
                           ),
                         )}
                       </div>
 
-                      <div className="bg-muted/30 p-4 rounded-xl border border-border/50">
+                      <div className="bg-muted/30 p-3 sm:p-4 rounded-xl border border-border/50">
                         <div className="flex items-center justify-between mb-2">
-                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                          <p className="text-xs sm:text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                             Suggested Message
                           </p>
                           <button
                             onClick={() =>
                               applySuggestedMessage(
                                 CATEGORIES.find((c) => c.id === selectedCategory)
-                                  ?.suggestedMessage || '',
+                                  ?.suggestedMessage || "",
                               )
                             }
-                            className="text-xs text-primary hover:underline font-medium"
+                            className="text-xs sm:text-sm text-primary hover:underline font-medium"
                           >
                             Use this template ↓
                           </button>
                         </div>
-                        <p className="text-sm italic text-muted-foreground/80">
+                        <p className="text-xs sm:text-sm italic text-muted-foreground/80">
                           "{CATEGORIES.find((c) => c.id === selectedCategory)?.suggestedMessage}"
                         </p>
                       </div>
@@ -386,15 +384,15 @@ const Contact = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="sticky top-24"
+              className="sticky top-20 lg:top-24"
             >
-              <div className="glass-card p-8 border-primary/10">
-                <h2 className="text-2xl font-display font-bold mb-6 flex items-center gap-3">
+              <div className="glass-card p-6 sm:p-8 border-primary/10">
+                <h2 className="text-xl md:text-2xl font-display font-bold mb-4 sm:mb-6 flex items-center gap-3">
                   <span className="text-primary">02.</span>
                   Send a Message
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   {/* Name */}
                   <div className="space-y-1">
                     <input
@@ -404,7 +402,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="Your Name"
-                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none ${
+                      className={`w-full px-4 py-3 sm:py-4 rounded-xl bg-muted/50 border transition-all outline-none text-sm sm:text-base ${
                         getFieldError('name')
                           ? 'border-red-500'
                           : 'border-border focus:border-primary'
@@ -424,7 +422,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="Email Address"
-                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none ${
+                      className={`w-full px-4 py-3 sm:py-4 rounded-xl bg-muted/50 border transition-all outline-none text-sm sm:text-base ${
                         getFieldError('email')
                           ? 'border-red-500'
                           : 'border-border focus:border-primary'
@@ -441,7 +439,7 @@ const Contact = () => {
                       name="recipient"
                       value={formData.recipient}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary outline-none appearance-none cursor-pointer"
+                      className="w-full px-4 py-3 sm:py-4 rounded-xl bg-muted/50 border border-border focus:border-primary outline-none appearance-none cursor-pointer text-sm sm:text-base"
                       aria-label="Select recipient for your message"
                     >
                       <option value="both">General (Send to Both)</option>
@@ -459,7 +457,7 @@ const Contact = () => {
                       required
                       rows={4}
                       placeholder="Tell me about your opportunity, project, or how we can work together..."
-                      className={`w-full px-4 py-3 rounded-xl bg-muted/50 border transition-all outline-none resize-none ${
+                      className={`w-full px-4 py-3 sm:py-4 rounded-xl bg-muted/50 border transition-all outline-none resize-none text-sm sm:text-base ${
                         getFieldError('message')
                           ? 'border-red-500'
                           : 'border-border focus:border-primary'
@@ -476,13 +474,13 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="magnetic-button w-full text-primary-foreground gap-2 disabled:opacity-50"
+                    className="magnetic-button w-full text-primary-foreground gap-2 disabled:opacity-50 py-3 sm:py-4 text-sm sm:text-base"
                   >
                     {isSubmitting ? (
                       'Sending...'
                     ) : (
                       <span className="flex items-center justify-center gap-2">
-                        Send Message <Send className="w-4 h-4" />
+                        Send Message <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                       </span>
                     )}
                   </button>
