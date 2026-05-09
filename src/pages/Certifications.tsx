@@ -11,38 +11,45 @@ interface Certification {
 
 const certifications: Certification[] = [
   {
+    title: 'IBM Cyber Security (PBEL 2.3)',
+    issuer: 'IBM / IBMMooc',
+    platform: 'IBM Skills Network',
+    link: 'https://courses.ibmmooc.skillsnetwork.site/certificates/37489e65c448491c9ca5ef6784b1a1c0',
+    icon: 'coursera',
+  },
+  {
     title: 'Excel Basics for Data Analysis',
     issuer: 'IBM',
     platform: 'Coursera',
-    link: 'https://coursera.org/certificate',
+    link: 'https://coursera.org/verify/9CPN4R66KVSG',
     icon: 'coursera',
   },
   {
     title: 'Data Visualization and Dashboards with Excel and Cognos',
     issuer: 'IBM',
     platform: 'Coursera',
-    link: 'https://coursera.org/certificate',
+    link: 'https://coursera.org/verify/TEMWUAJ378ZY',
     icon: 'coursera',
   },
   {
     title: 'Introduction to Data Analytics',
     issuer: 'IBM',
     platform: 'Coursera',
-    link: 'https://coursera.org/certificate',
+    link: 'https://coursera.org/verify/PFWPBS4274YK',
     icon: 'coursera',
   },
   {
     title: 'Data Visualization',
-    issuer: 'University',
+    issuer: 'University of Illinois at Urbana-Champaign',
     platform: 'Coursera',
-    link: 'https://coursera.org/certificate',
+    link: 'https://coursera.org/verify/EVQWFZ76B5NB',
     icon: 'coursera',
   },
   {
     title: 'Data Science Math Skills',
     issuer: 'Duke University',
     platform: 'Coursera',
-    link: 'https://coursera.org/certificate',
+    link: 'https://coursera.org/verify/37B8LNSFCB2G',
     icon: 'coursera',
   },
   {
@@ -63,9 +70,9 @@ const certifications: Certification[] = [
 
 const achievements = [
   {
-    title: 'Hackathon 2.0 Winner',
+    title: 'Hackathon 2.0 Participant',
     year: '2022',
-    description: 'Won Hackathon 2.0 for innovative project submission',
+    description: 'Participated in Hackathon 2.0 and showcased innovative project skills',
     icon: Trophy,
   },
   {
