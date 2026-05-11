@@ -6,6 +6,15 @@ import Testimonials from '@/components/Testimonials';
 
 const timelineData = [
   {
+    year: 'Jan 2026 - Apr 2026',
+    title: 'MERN Stack Developer Intern',
+    institution: 'SkillFied Mentor (Remote)',
+    description:
+      'Built full-stack web applications using the MERN Stack. Developed REST APIs, integrated frontend-backend workflows, and improved debugging and deployment skills through real-world tasks.',
+    icon: Briefcase,
+    type: 'experience',
+  },
+  {
     year: '2022 - 2026',
     title: 'B.Tech in Computer Science',
     institution: 'Vivekananda Global University, Jaipur',
@@ -59,8 +68,8 @@ const About = () => {
           {[
             { label: 'Education', value: '2022-2026', icon: Calendar },
             { label: 'Projects', value: '10+', icon: Code },
-            { label: 'Experience', value: '2 Months', icon: Briefcase },
-            { label: 'Certifications', value: '7+', icon: GraduationCap },
+            { label: 'Experience', value: '5 Months', icon: Briefcase },
+            { label: 'Certifications', value: '8+', icon: GraduationCap },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

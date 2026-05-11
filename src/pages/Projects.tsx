@@ -29,6 +29,21 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'MERN Stack Authentication System',
+    description:
+      'A secure full-stack authentication application with user login and registration built on the MERN Stack. Features JWT-based authentication and protected routing to ensure safe session management.',
+    technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT'],
+    github: 'https://github.com/Shsrma',
+    timeline: '2025',
+    category: 'Full Stack',
+    image: 'https://placehold.co/600x400/0f172a/22c55e?text=MERN+Auth+System',
+    highlights: [
+      'Implemented JWT-based authentication and protected routing mechanisms.',
+      'Designed responsive frontend interfaces and backend REST APIs.',
+      'Improved security and session management using encrypted authentication workflows.',
+    ],
+  },
+  {
     title: 'AI Fraud Detection System',
     description:
       'Real-time transaction monitoring system designed to identify and prevent fraudulent credit card activities using advanced machine learning algorithms.',
