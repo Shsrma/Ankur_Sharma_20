@@ -114,32 +114,10 @@ jobs:
       
       - name: Install dependencies
         working-directory: backend
-        run: npm ci
+        run: npm install
       
       - name: Check syntax
         working-directory: backend
-        run: npm run lint || true  # Continue even if lint warnings exist
+        run: npm run lint --if-present || true
 
-  # Deploy to Vercel (Frontend) - only on main branch
-  deploy-frontend:
-    name: Deploy Frontend to Vercel
-    runs-on: ubuntu-latest
-    needs: build-frontend
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: frontend-build
-          path: dist/
-      
-      - name: Deploy to Vercel
-        uses: vercel/actions/deploy-production@master
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-        env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+
