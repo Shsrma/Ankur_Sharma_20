@@ -368,6 +368,73 @@ const Contact = () => {
               </AnimatePresence>
             </motion.div>
 
+            {/* Documents Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+              className="glass-card p-6 border-primary/20"
+            >
+              <h2 className="text-xl font-display font-bold mb-4 flex items-center gap-3">
+                <span className="text-primary">02.</span>
+                Documents & Resources
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a
+                  href="/Ankur_Sharma_FlowCV_Resume_2026-05-09.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-background/50 border border-border/50 hover:border-primary/50 transition-all group"
+                >
+                  <Briefcase className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Resume</p>
+                    <p className="text-xs text-muted-foreground">PDF Document</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a
+                  href="/Internshsip .pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-background/50 border border-border/50 hover:border-primary/50 transition-all group"
+                >
+                  <Laptop className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Internship Certificate</p>
+                    <p className="text-xs text-muted-foreground">PDF Document</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a
+                  href="/IBMCEP PBELCS231IN Certificate _ IBMMooc.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-background/50 border border-border/50 hover:border-primary/50 transition-all group"
+                >
+                  <Database className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">IBM Cyber Security</p>
+                    <p className="text-xs text-muted-foreground">PDF Document</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a
+                  href="/Certificate.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-background/50 border border-border/50 hover:border-primary/50 transition-all group"
+                >
+                  <Globe className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Other Certificates</p>
+                    <p className="text-xs text-muted-foreground">PDF Document</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
+            </motion.div>
+
             {/* Recent Messages Section */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}

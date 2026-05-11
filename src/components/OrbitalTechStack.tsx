@@ -5,25 +5,30 @@ interface Skill {
   name: string;
   category: string;
   color: string;
+  level: string;
+  progress: number;
 }
 
 const skills: Skill[] = [
-  { name: 'Java', category: 'Programming', color: 'hsl(200, 100%, 50%)' },
-  { name: 'Python', category: 'Programming', color: 'hsl(50, 100%, 50%)' },
-  { name: 'C++', category: 'Programming', color: 'hsl(220, 100%, 60%)' },
-  { name: 'JavaScript', category: 'Web', color: 'hsl(45, 100%, 50%)' },
-  { name: 'HTML5', category: 'Web', color: 'hsl(15, 100%, 55%)' },
-  { name: 'CSS3', category: 'Web', color: 'hsl(210, 100%, 55%)' },
-  { name: 'MySQL', category: 'Database', color: 'hsl(200, 100%, 45%)' },
-  { name: 'Git', category: 'Tools', color: 'hsl(10, 100%, 55%)' },
-  { name: 'NumPy', category: 'ML', color: 'hsl(210, 100%, 50%)' },
-  { name: 'Pandas', category: 'ML', color: 'hsl(280, 100%, 60%)' },
-  { name: 'Scikit-learn', category: 'ML', color: 'hsl(30, 100%, 55%)' },
-  { name: 'Linux', category: 'Tools', color: 'hsl(45, 100%, 45%)' },
+  { name: 'Java', category: 'Programming', color: 'hsl(200, 100%, 50%)', level: 'Intermediate', progress: 65 },
+  { name: 'Python', category: 'Programming', color: 'hsl(50, 100%, 50%)', level: 'Intermediate', progress: 60 },
+  { name: 'C++', category: 'Programming', color: 'hsl(220, 100%, 60%)', level: 'Familiar', progress: 50 },
+  { name: 'JavaScript', category: 'Web', color: 'hsl(45, 100%, 50%)', level: 'Intermediate', progress: 70 },
+  { name: 'TypeScript', category: 'Web', color: 'hsl(210, 100%, 55%)', level: 'Familiar', progress: 55 },
+  { name: 'React', category: 'Web', color: 'hsl(190, 100%, 55%)', level: 'Intermediate', progress: 65 },
+  { name: 'Node.js', category: 'Web', color: 'hsl(110, 100%, 45%)', level: 'Familiar', progress: 55 },
+  { name: 'MySQL', category: 'Database', color: 'hsl(200, 100%, 45%)', level: 'Intermediate', progress: 65 },
+  { name: 'MongoDB', category: 'Database', color: 'hsl(120, 100%, 40%)', level: 'Familiar', progress: 50 },
+  { name: 'Git', category: 'Tools', color: 'hsl(10, 100%, 55%)', level: 'Intermediate', progress: 70 },
+  { name: 'Docker', category: 'Tools', color: 'hsl(210, 100%, 60%)', level: 'Learning', progress: 40 },
+  { name: 'NumPy', category: 'ML', color: 'hsl(210, 100%, 50%)', level: 'Familiar', progress: 55 },
+  { name: 'Pandas', category: 'ML', color: 'hsl(280, 100%, 60%)', level: 'Familiar', progress: 55 },
+  { name: 'Scikit-learn', category: 'ML', color: 'hsl(30, 100%, 55%)', level: 'Learning', progress: 45 },
+  { name: 'Linux', category: 'Tools', color: 'hsl(45, 100%, 45%)', level: 'Familiar', progress: 50 },
 ];
 
 const OrbitalTechStack = () => {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+  const [activeSkill, setActiveSkill] = useState<string | null>(null);
   const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
@@ -105,29 +110,45 @@ const OrbitalTechStack = () => {
             style={{
               x: position.x,
               y: position.y,
-              scale: hoveredSkill === skill.name ? 1.3 : scale,
-              opacity: hoveredSkill === skill.name ? 1 : opacity,
-              zIndex: hoveredSkill === skill.name ? 30 : zIndex,
+              scale: activeSkill === skill.name ? 1.3 : scale,
+              opacity: activeSkill === skill.name ? 1 : opacity,
+              zIndex: activeSkill === skill.name ? 30 : zIndex,
             }}
-            onMouseEnter={() => setHoveredSkill(skill.name)}
-            onMouseLeave={() => setHoveredSkill(null)}
-            whileHover={{ scale: 1.3 }}
+            onClick={() => setActiveSkill(activeSkill === skill.name ? null : skill.name)}
+            whileHover={{ scale: activeSkill === skill.name ? 1.3 : 1.1 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           >
             <div
-              className="px-3 py-2 md:px-4 md:py-2.5 rounded-xl font-medium text-xs md:text-sm whitespace-nowrap transition-all duration-300"
+              className="px-3 py-2 md:px-4 md:py-2.5 rounded-xl font-medium text-xs md:text-sm whitespace-nowrap transition-all duration-300 flex flex-col items-center justify-center gap-1"
               style={{
-                background: hoveredSkill === skill.name ? skill.color : 'var(--glass-bg)',
+                background: activeSkill === skill.name ? skill.color : 'var(--glass-bg)',
                 backdropFilter: 'blur(10px)',
-                border: `1px solid ${hoveredSkill === skill.name ? skill.color : 'var(--glass-border)'}`,
-                color: hoveredSkill === skill.name ? 'white' : 'inherit',
+                border: `1px solid ${activeSkill === skill.name ? skill.color : 'var(--glass-border)'}`,
+                color: activeSkill === skill.name ? 'white' : 'inherit',
                 boxShadow:
-                  hoveredSkill === skill.name
+                  activeSkill === skill.name
                     ? `0 0 30px ${skill.color}80, 0 0 60px ${skill.color}40`
                     : 'none',
               }}
             >
-              {skill.name}
+              <span>{skill.name}</span>
+              {activeSkill === skill.name && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  className="flex flex-col items-center w-full min-w-[100px] mt-1 gap-1"
+                >
+                  <span className="text-[10px] opacity-90 font-bold tracking-wider uppercase">{skill.level}</span>
+                  <div className="w-full h-1.5 bg-black/20 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-white rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${skill.progress}%` }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                    />
+                  </div>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         );

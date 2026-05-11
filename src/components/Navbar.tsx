@@ -9,6 +9,7 @@ const navItems = [
   { name: 'About', path: '/about' },
   { name: 'Projects', path: '/projects' },
   { name: 'Certifications', path: '/certifications' },
+  { name: 'Activity', path: '/activity' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -108,7 +109,7 @@ const Navbar = () => {
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <motion.a
-              href="/Ankur_Sharma-ResumeD.pdf"
+              href="/Ankur_Sharma_FlowCV_Resume_2026-05-09.pdf"
               download="AnkurSharma-Resume.pdf"
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-sm font-medium hover:bg-muted/50 transition-colors"
               whileHover={{ scale: 1.05 }}
@@ -209,7 +210,7 @@ const Navbar = () => {
                     className="mt-6 pt-6 border-t border-border/50"
                   >
                     <a
-                      href="/Ankur_Sharma-ResumeD.pdf"
+                      href="/Ankur_Sharma_FlowCV_Resume_2026-05-09.pdf"
                       download="AnkurSharma-Resume.pdf"
                       className="flex items-center gap-3 px-4 py-4 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300"
                     >

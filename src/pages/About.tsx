@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, GraduationCap, Briefcase, Code, BookOpen } from 'lucide-react';
 import OrbitalTechStack from '@/components/OrbitalTechStack';
 import WhyHireMe from '@/components/WhyHireMe';
-import Testimonials from '@/components/Testimonials';
 
 const timelineData = [
   {
@@ -10,7 +9,7 @@ const timelineData = [
     title: 'MERN Stack Developer Intern',
     institution: 'SkillFied Mentor (Remote)',
     description:
-      'Built full-stack web applications using the MERN Stack. Developed REST APIs, integrated frontend-backend workflows, and improved debugging and deployment skills through real-world tasks.',
+      'Gained practical experience building web applications using the MERN Stack. Contributed to API development and frontend integrations, significantly improving my full-stack proficiency.',
     icon: Briefcase,
     type: 'experience',
   },
@@ -18,7 +17,7 @@ const timelineData = [
     year: '2022 - 2026',
     title: 'B.Tech in Computer Science',
     institution: 'Vivekananda Global University, Jaipur',
-    description: 'CGPA: 7.56/10',
+    description: 'Current CGPA: 7.56/10. Active participant in coding clubs and hackathons.',
     icon: GraduationCap,
     type: 'education',
   },
@@ -27,7 +26,7 @@ const timelineData = [
     title: 'Web Developer Intern',
     institution: 'InternPe, Jaipur',
     description:
-      'Developed responsive web pages, implemented form validation, and collaborated using Git.',
+      'Learned the fundamentals of professional web development, including responsive design and version control with Git.',
     icon: Briefcase,
     type: 'experience',
   },
@@ -36,6 +35,14 @@ const timelineData = [
     title: 'Senior Secondary (12th - Science)',
     institution: 'RBSE',
     description: 'Percentage: 85.5%',
+    icon: BookOpen,
+    type: 'education',
+  },
+  {
+    year: '2019',
+    title: 'Secondary School (10th)',
+    institution: 'RBSE',
+    description: 'Percentage: 86.83%',
     icon: BookOpen,
     type: 'education',
   },
@@ -93,19 +100,32 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-[1fr_2fr_1fr] gap-8 items-center">
+            {/* Profile Picture */}
+            <motion.div 
+              className="flex justify-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
+              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]">
+                <img 
+                  src="/src/assets/profile.jpeg" 
+                  alt="Ankur Sharma" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
             <div>
               <h2 className="text-2xl font-display font-bold mb-4 neon-text">Who Am I?</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I am a final-year B.Tech Computer Science student at Vivekananda Global University,
-                Jaipur, with a passion for creating innovative digital solutions. My expertise spans
+                I am an enthusiastic beginner-to-intermediate developer and a final-year B.Tech Computer Science student at Vivekananda Global University,
+                Jaipur. I have a strong passion for learning and building innovative digital solutions, with foundational expertise 
                 across full-stack web development, machine learning, and data analysis.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                With hands-on experience in developing responsive web applications and ML-powered
-                systems, I enjoy solving complex problems and building applications that make a
-                real-world impact. I'm constantly learning and exploring new technologies to stay at
-                the forefront of innovation.
+                I thrive on hands-on learning through internships and personal projects. My journey so far has equipped me with practical experience in MERN stack development and data-driven applications. I am highly motivated to keep expanding my tech arsenal and to contribute effectively to impactful real-world projects!
               </p>
             </div>
             <div>
@@ -200,9 +220,6 @@ const About = () => {
       
       {/* Why Hire Me Section */}
       <WhyHireMe />
-      
-      {/* Testimonials Section */}
-      <Testimonials />
     </div>
   );
 };

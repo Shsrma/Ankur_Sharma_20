@@ -7,6 +7,7 @@ interface Certification {
   platform: string;
   link?: string;
   icon: 'coursera' | 'nptel';
+  description?: string;
 }
 
 const certifications: Certification[] = [
@@ -16,6 +17,7 @@ const certifications: Certification[] = [
     platform: 'IBM Skills Network',
     link: 'https://courses.ibmmooc.skillsnetwork.site/certificates/37489e65c448491c9ca5ef6784b1a1c0',
     icon: 'coursera',
+    description: 'Comprehensive overview of network security, threat intelligence, and modern cybersecurity frameworks.',
   },
   {
     title: 'Excel Basics for Data Analysis',
@@ -23,6 +25,7 @@ const certifications: Certification[] = [
     platform: 'Coursera',
     link: 'https://coursera.org/verify/9CPN4R66KVSG',
     icon: 'coursera',
+    description: 'Mastered foundational data manipulation, formatting, and analysis using Excel spreadsheets.',
   },
   {
     title: 'Data Visualization and Dashboards with Excel and Cognos',
@@ -30,6 +33,7 @@ const certifications: Certification[] = [
     platform: 'Coursera',
     link: 'https://coursera.org/verify/TEMWUAJ378ZY',
     icon: 'coursera',
+    description: 'Learned to craft compelling data stories and interactive dashboards without writing code.',
   },
   {
     title: 'Introduction to Data Analytics',
@@ -37,6 +41,7 @@ const certifications: Certification[] = [
     platform: 'Coursera',
     link: 'https://coursera.org/verify/PFWPBS4274YK',
     icon: 'coursera',
+    description: 'Explored the modern data ecosystem, data gathering, cleaning techniques, and analysis tools.',
   },
   {
     title: 'Data Visualization',
@@ -44,6 +49,7 @@ const certifications: Certification[] = [
     platform: 'Coursera',
     link: 'https://coursera.org/verify/EVQWFZ76B5NB',
     icon: 'coursera',
+    description: 'Gained expertise in visually representing complex data to reveal underlying patterns and trends.',
   },
   {
     title: 'Data Science Math Skills',
@@ -51,6 +57,7 @@ const certifications: Certification[] = [
     platform: 'Coursera',
     link: 'https://coursera.org/verify/37B8LNSFCB2G',
     icon: 'coursera',
+    description: 'Built a strong foundation in probability, algebra, and core mathematical concepts essential for data science.',
   },
   {
     title: 'Business Fundamentals for Entrepreneurs (Part 2)',
@@ -58,6 +65,7 @@ const certifications: Certification[] = [
     platform: 'NPTEL',
     link: 'https://nptel.ac.in/certificate',
     icon: 'nptel',
+    description: 'Studied crucial entrepreneurial concepts, strategic planning, and business operational management.',
   },
   {
     title: 'Management Information System',
@@ -65,6 +73,7 @@ const certifications: Certification[] = [
     platform: 'NPTEL',
     link: 'https://nptel.ac.in/certificate',
     icon: 'nptel',
+    description: 'Understanding the role of information systems in organizational decision-making and business processes.',
   },
 ];
 
@@ -146,7 +155,10 @@ const Certifications = () => {
                     <h3 className="font-semibold text-sm mb-1 line-clamp-2 group-hover:text-primary transition-colors">
                       {cert.title}
                     </h3>
-                    <p className="text-xs text-muted-foreground mb-2">{cert.issuer}</p>
+                    <p className="text-xs text-muted-foreground mb-1">{cert.issuer}</p>
+                    {cert.description && (
+                      <p className="text-xs text-muted-foreground/80 mb-3 italic line-clamp-2">{cert.description}</p>
+                    )}
                     <div className="flex items-center justify-between">
                       <span
                         className="text-xs px-2 py-1 rounded-full"

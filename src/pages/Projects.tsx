@@ -18,7 +18,7 @@ const projects: Project[] = [
     description:
       'A secure decentralized storage solution addressing data privacy and integrity. Combines the immutability of blockchain with the scalability of cloud storage to prevent unauthorized tampering.',
     technologies: ['Python', 'Blockchain', 'Advanced Encryption', 'SHA-256', 'Cloud Architecture'],
-    github: 'https://github.com/Shsrma',
+    github: 'https://github.com/Shsrma/ASproject_hybrid',
     timeline: 'Jul 2025 – Nov 2025',
     category: 'Security & Web3',
     image: 'https://placehold.co/600x400/0f172a/0ea5e9?text=Blockchain+Storage',
@@ -29,11 +29,26 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'Real-time Chat Application',
+    description:
+      'A full-stack, enterprise-grade real-time communication platform featuring instant messaging, media sharing, and modern chat features.',
+    technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io', 'WebRTC'],
+    github: 'https://github.com/Shsrma/Chat-Application-AS2',
+    timeline: '2026',
+    category: 'Full Stack & WebSockets',
+    image: 'https://placehold.co/600x400/0f172a/f59e0b?text=Chat+Application',
+    highlights: [
+      'Engineered real-time bidirectional communication using Socket.io and WebRTC.',
+      'Developed a scalable MERN backend to support multiple concurrent users.',
+      'Designed a responsive, modern UI mimicking industry-leading chat apps.',
+    ],
+  },
+  {
     title: 'MERN Stack Authentication System',
     description:
       'A secure full-stack authentication application with user login and registration built on the MERN Stack. Features JWT-based authentication and protected routing to ensure safe session management.',
     technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT'],
-    github: 'https://github.com/Shsrma',
+    github: 'https://github.com/Shsrma/Authentication-System',
     timeline: '2025',
     category: 'Full Stack',
     image: 'https://placehold.co/600x400/0f172a/22c55e?text=MERN+Auth+System',
@@ -44,11 +59,11 @@ const projects: Project[] = [
     ],
   },
   {
-    title: 'AI Fraud Detection System',
+    title: 'Credit Card Fraud Detection',
     description:
       'Real-time transaction monitoring system designed to identify and prevent fraudulent credit card activities using advanced machine learning algorithms.',
     technologies: ['Python', 'Scikit-learn', 'Pandas', 'MySQL', 'REST API'],
-    github: 'https://github.com/Shsrma',
+    github: 'https://github.com/Shsrma/CCRD',
     timeline: 'Jul 2025 – Nov 2025',
     category: 'AI & Data Science',
     image: 'https://placehold.co/600x400/0f172a/a855f7?text=Fraud+Detection',
@@ -63,7 +78,7 @@ const projects: Project[] = [
     description:
       'Healthcare capability demonstrator predicting potential diseases based on user-reported symptoms, aiding in early diagnosis and awareness.',
     technologies: ['Python', 'NumPy', 'Matplotlib', 'Machine Learning', 'Data Viz'],
-    github: 'https://github.com/Shsrma',
+    github: 'https://github.com/Shsrma/Disease-Prediction', // assuming the name since not listed explicitly
     timeline: '2024',
     category: 'Healthcare AI',
     image: 'https://placehold.co/600x400/0f172a/ec4899?text=Disease+Prediction',

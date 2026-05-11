@@ -9,11 +9,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 import CursorGlow from './components/CursorGlow';
-import VisitorEngagement from './components/VisitorEngagement';
 import Index from './pages/Index';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Certifications from './pages/Certifications';
+import Activity from './pages/Activity';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
@@ -56,12 +56,12 @@ const App = () => {
                   <Route path="/about" element={<About />} />
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/certifications" element={<Certifications />} />
+                  <Route path="/activity" element={<Activity />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
               <Footer />
-              <VisitorEngagement />
             </div>
           </BrowserRouter>
         </TooltipProvider>
